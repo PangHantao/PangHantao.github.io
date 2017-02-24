@@ -8,12 +8,33 @@
   <link rel="dns-prefetch" href="http://hunterblog.cn">
   <title>Hunter &#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="#J2SE##基础八种基本数据类型的大小，以及他们的封装类。
+八种基本数据类型，int ,double ,long ,float, short,byte,character,boolean
+对应的封装类型是：Integer ,Double ,Long ,Float, Short,Byte,Character,Boolean
+
+Switch能否用string做参数？
+在Java 5以前，switch">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hunter ' blog">
-<meta property="og:url" content="http://hunterblog.cn/index.html">
+<meta property="og:url" content="http://hunterblog.cn/2017/02/24/Java基础知识/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
+<meta property="og:description" content="#J2SE##基础八种基本数据类型的大小，以及他们的封装类。
+八种基本数据类型，int ,double ,long ,float, short,byte,character,boolean
+对应的封装类型是：Integer ,Double ,Long ,Float, Short,Byte,Character,Boolean
+
+Switch能否用string做参数？
+在Java 5以前，switch">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/679904/201510/679904-20151025210813989-921927916.jpg">
+<meta property="og:updated_time" content="2016-11-18T11:00:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hunter ' blog">
+<meta name="twitter:description" content="#J2SE##基础八种基本数据类型的大小，以及他们的封装类。
+八种基本数据类型，int ,double ,long ,float, short,byte,character,boolean
+对应的封装类型是：Integer ,Double ,Long ,Float, Short,Byte,Character,Boolean
+
+Switch能否用string做参数？
+在Java 5以前，switch">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/679904/201510/679904-20151025210813989-921927916.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hunter &#39; blog" type="application/atom+xml">
   
@@ -151,307 +172,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="=-JavaSe" class="article article-type-=  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/24/JavaSe/">JavaSe — 面向对象</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/24/JavaSe/" class="archive-article-date">
-  	<time datetime="2017-02-24T13:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaSe基础-—-面向对象"><a href="#JavaSe基础-—-面向对象" class="headerlink" title="##JavaSe基础 —    面向对象"></a>##JavaSe基础 —    面向对象</h2><h2 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="###面向对象的三大思想特征：封装，继承，多态"></a>###面向对象的三大思想特征：封装，继承，多态</h2><p>###1. 封装</p>
-<p>####1.1 定义：<br>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）<br><!--阅读更多--></p>
-<p>####1.2 private关键字<br>可用于修饰成员内容，包括成员变量和成员方法，被他修饰完毕后的内容，在其他类中是不能直接访问的，换句话说就是被private修饰的内容只能在本类中使用</p>
-<p>####1.3 getter/setter方法的使用<br>因为类的属性被私有化，只能在本类中访问，其他类想要访问就需要提供getter方法和setter方法。但这两个方法时相互独立的，不一定必须出现（get方法和set方法的名字可以随便起，只不过大家通过方法访问私有属性的时候形成了一个默认的规则：设置类的属性值通过setXxx()方法，获取类的属性通过getXxx()方法）。</p>
-<p>####1.4 this关键字<br>a.this关键字只能代表本类对象<br>b.this关键字代表所属方法的所属对象<br>c.谁调用this，this就代表谁<br>d.this可用于区分成员变量和局部变量同名的情况（例如this.属性名代表的是成员变量）</p>
-<p>####1.5 构造方法</p>
-<p>#####1.5.1    特点：<br>a.方法名必须和类名保持一致<br>b.没有返回值类型并且没有具体的返回值，连void都没有</p>
-<p>#####1.5.2 作用：<br>给对象的属性进行初始化</p>
-<p>#####1.5.3 注意事项<br>a.如果没有明确给出构造方法，系统会默认给出一个无参的构造方法<br>b.只要给出明确的构造方法，系统将不会提供任何的构造方法<br>c.构造方法的重载体现在参数的不同（包括参数类型、个数以及顺序）</p>
-<p>####1.6 给私有属性赋值的方式<br>a.通过set方法（推荐使用）<br>b.通过构造方法<br>c.在定义成员变量的时候就赋值<br>例如：private String name = “张三”；<br>d.通过反射中的Fied类中的对象给对象的属性赋值</p>
-<p>####1.7构造方法和setter方法的区别<br>a.构造方法是在创建对象的时候赋值，只能赋值一次<br>b.setter方法是在创建完对象以后再给对象的属性赋值，能赋值多次</p>
-<p>代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line">一个类的代码分布图：</div><div class="line">    属性 </div><div class="line">    构造方法 </div><div class="line">    成员方法 </div><div class="line">    get方法和set方法</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="comment">/** 姓名 */</span></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">	<span class="comment">/** 年龄 */</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>();</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取姓名</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@return</span> name 姓名</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 设置姓名</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@param</span> name</div><div class="line">	 *            姓名</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取年龄</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@return</span> age 年龄</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 设置年龄</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@param</span> age</div><div class="line">	 *            年龄</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">测试类</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//通过无参构造创建对象，并给成员变量赋值</span></div><div class="line">		Student zs = <span class="keyword">new</span> Student();</div><div class="line">		zs.setName(<span class="string">"张三"</span>);</div><div class="line">		zs.setAge(<span class="number">13</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//通过有参构造创建对象，并给成员变量赋值</span></div><div class="line">		Student ls = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">14</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//调用对象的方法</span></div><div class="line">		System.out.println(zs.getName()+<span class="string">"----"</span>+zs.getAge());</div><div class="line">		System.out.println(ls.getName()+<span class="string">"----"</span>+ls.getAge());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####1.8 static关键字</p>
-<p>#####1.8.1 定义<br>static意为静态，可以修饰成员变量和成员方法，被static修饰的成员，可以被该类下的所有对象共享（例如 private static int number = 10; 这个number变量就可以被该类下所有对象使用）</p>
-<p>#####1.8.2特点<br>a.被static修饰的成员随着类的加载而加载， 并且优先于对象而存在（即在内存中加载完该成员才到对象的创建）<br>b.可以通过类名<strong>.</strong>直接调用<br>c.被该类下所有对象共享</p>
-<p>#####1.8.3注意事项<br>a.在静态方法中没有this关键字，因为静态是随着类的加载而加载，而this关键字是对象创建才存在的<br>b.静态方法只能访问静态成员变量和静态的方法（即静态只能访问静态）<br>c.静态内容可以通过创建对象调用，也可以直接通过类名<strong>.</strong>调用。（推荐通过类名点调用）</p>
-<hr>
-<p>###2.继承</p>
-<p>####2.1由来和定义<br>a.在多个类中存在相同的属性和行为时，将这些内容抽取到单个类中，那么多个类无需再定义该属性和行为，只需要继承那单个类即可<br>b.多个类成为子类或派生类，单个类成为超类或者父类又或者基类</p>
-<p>####2.2好处和弊端<br>a.提高代码的复用性<br>b.使类与类产生关系，是多态的前提<br>c.Java中只支持单继承，不支持多继承，但支持多层继承</p>
-<p>####2.3使用场景<br>子类是父类的一种，比如猫继承动物，猫就是子类，动物就是父类（注意：不要为了获取某个功能而去继承）</p>
-<p>####2.4this和super比较</p>
-<p>#####2.4.1概念上的区别<br>super代表的是父类内存空间标识<br>this代表所在方法所属对象的引用</p>
-<p>#####2.4.2super使用场景<br>a.当子父类中出现同名成员可以用super区分<br>b.子类调用父类的构造方法可以用super<strong>.</strong>方法名调用</p>
-<p>#####2.4.3注意事项<br>a.构造方法中的this()和super()语句必须放在第一行，并且只能取其一<br>b.如果父类中无无参构造，子类只能通过super(参数)调用父类的构造方法，通过this(…)调用本类的构造方法</p>
-<p>####2.5重写OverRide和重载OverLoad</p>
-<p>#####2.5.1重写OverRide<br>在子父类关系中，子类中存在与父类中<strong>方法声明</strong>完全一样的方法叫重写（即除了方法体不一样，其他都是一样的，但子类的权限要大于等于父类的）</p>
-<p>#####2.5.2重载OverLoad<br>在一个类中或者在子父类中存在多个同名方法，并且参数列表不同的方法叫重载</p>
-<p>#####2.5.3注意事项<br>a.只有方法才存在重写，变量不存在重写这一说法<br>b.父类中的私有方法不能被覆盖</p>
-<p>####2.6final关键字</p>
-<p>#####2.6.1定义<br>很多时候有些方法内容时不能被重写的。而我们知道父类方法声明为public就可以被重写。针对这种情况，我们可以做个标记，告诉别人此类不能被重写<br>final ：最终的意思，可以修饰类，变量以及成员方法</p>
-<p>#####2.6.2被final修饰的特点<br>a.被final修饰的方法不能被重写<br>b.被final修饰的类不能被继承<br>c.被final修饰的变量其实就是常量，必须显示地赋值，并且命名要全部大写，每个单词之间用下划线连接起来</p>
-<p>#####2.6.3被final修饰的类<br>java.lang.reflect.Array</p>
-<pre><code>boolean的包装类java.lang.Boolean
-
-byte的包装类java.lang.Byte
-
-char的包装类java.lang.Character
-
-double的包装类java.lang.Double
-
-float的包装类java.lang.Float
-
-int的包装类java.lang.Integer
-
-long的包装类java.lang.Long
-
-short的包装类java.lang.Short
-
-void的包装类java.lang.Void
-
-String类java.lang.String
-
-System类java.lang.System
-
-Class类java.lang.Class&lt;T&gt;
-
-编译器java.lang.Compiler类
-
-Math类java.lang.Math
-
-两个可变字符序列类java.lang.StringBuffer与java.lang.StringBuilder
-
-Scanner类java.util.Scanner
-
-正则匹配器java.util.regex.Matcher
-
-正则表达式编译形式类java.util.regex.Pattern
-</code></pre><hr>
-<p>###3.多态 </p>
-<p>####3.1多态的定义<br>对象在不同时刻表现出来的不同状态</p>
-<p>####3.2多态的前提条件<br>a.要有继承关系或者实现关系<br>b.要有方法重写或者实现关系<br>c.要有父类引用指向子类对象或者父类接口指向子类对象</p>
-<p>####3.3多态的成员特点</p>
-<p>#####3.3.1成员变量<br>编译看等号左边，运行看等号左边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu  = <span class="keyword">new</span> Zi();</div><div class="line">System.out.println(fu.name);<span class="comment">//调用的是父类的name属性</span></div></pre></td></tr></table></figure></p>
-<p>#####3.3.2成员方法<br>编译看等号的左边，运行看等号的右边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu = <span class="keyword">new</span> Zi();</div><div class="line">fu.show();<span class="comment">//调用的是子类的show()</span></div></pre></td></tr></table></figure></p>
-<p><strong>小结：方法运行看右边</strong></p>
-<p>####3.4多态的好处和弊端</p>
-<p>#####3.4.1弊端<br>父类引用不能直接使用子类对象的特有功能，只能通过向下转型（强转）实现</p>
-<p>#####3.4.2好处<br>增强了程序的拓展性和可维护性，大大减少了维护成本</p>
-<hr>
-<p>##拓展</p>
-<p>###抽象类</p>
-<p>####1.由来<br>类里面封装的是相关的属性和行为，但是有些行为我们是不确定做什么的，这个时候我们就把这个方法用abstract修饰，当方法被这个关键字修饰以后，就不能有方法体了，并且这个类也必须被abstract修饰，这就是抽象类的由来</p>
-<p>####2.定义<br>如果一个类中含有抽象方法，这个类就可以被称为抽象类，该类也需要被abstract修饰。它的作用是强制要求子类必须实现某些功能<br>（抽象方法：只有方法声明，没有方法体，被abstract修饰）</p>
-<p>####3.格式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义抽象类的格式</span></div><div class="line">       <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">                  System.out.println(<span class="string">"我在跑步"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;     </div><div class="line">	<span class="comment">//使用格式1 </span></div><div class="line">    <span class="comment">//定义个普通类，继承抽象类，必须实现抽象类中的抽象方法</span></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">                   System.out.println(<span class="string">"狗吃骨头"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">   <span class="comment">//使用格式2</span></div><div class="line">   <span class="comment">//定义一个抽象类继承抽象类，不是必须要实现父类的抽象方法</span></div><div class="line">        <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
-<p>####4.基本特点<br>a. 抽象方法和抽象类用关键字abstract表示。<br>b. 有抽象方法的类一定是抽象类(或者接口)。抽象类中不一定有抽象方法。<br>c. 抽象类不能被实例化。<br>d. 如果一个类继承抽象类，那么这个类要么本身也是抽象类。这个类 必须重写父类的所有抽象方法。</p>
-<p>####5.成员特点</p>
-<p>#####5.1 成员变量<br>可以有成员变量，也可以有常量</p>
-<p>#####5.2 构造方法<br>抽象类有构造方法，但是不能通过构造方法创建对象，构造方法的作用是让子类访问父类数据之前，对父类数据进行初始化</p>
-<p>#####5.3成员方法<br>可以有抽象方法，也可以有非抽象方法<br>抽象方法是为了要求子类做某些事情<br>非抽象方法是为了提高代码的复用性，被子类继承</p>
-<p>#####6.使用场景<br>  人刚生下来就具备哭的行为特征，但是每个人哭的行为不一样，所以人应该定义为抽象类，这些与生俱来的属性和行为应该定义在类里面</p>
-<p>###接口</p>
-<p>####1.定义<br>我们可以把接口看成是一种特殊的抽象类。比抽象类更抽象。因为它里面的方法都是抽象的。但是注意，接口不是类，我们只是把他看成类</p>
-<p>####2.格式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义格式</span></div><div class="line">	 <span class="class"><span class="keyword">interface</span> 接口名 </span>&#123;</div><div class="line">	     <span class="comment">//静态常量和抽象方法</span></div><div class="line">	 &#125;		</div><div class="line"><span class="comment">//使用格式	</span></div><div class="line">	<span class="comment">//一个类实现一个接口	</span></div><div class="line">     <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">implements</span> 接口名1，接口名2... </span>&#123;</div><div class="line">           <span class="comment">//覆盖接口中的全部方法</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">	<span class="comment">//一个抽象类实现一个接口，不必重写接口中的抽象方法</span></div><div class="line">      <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> 接口1, 接口2,接口..... </span>&#123;</div><div class="line">           <span class="comment">//方法体不需要全部都覆盖</span></div><div class="line">      &#125;</div><div class="line">	<span class="comment">//一个接口继承一个接口</span></div><div class="line">       <span class="class"><span class="keyword">interface</span> 接口名 <span class="keyword">extends</span> 接口1，接口2.. </span>&#123;</div><div class="line">       &#125;</div></pre></td></tr></table></figure></p>
-<p>####3.基本特点<br>a. 接口不能被实例化<br>b. 接口中的方法要么被子类重写，要么子类也是抽象类</p>
-<p>####4.成员特点</p>
-<p>#####4.1 成员变量<br>接口中只有常量。因为接口中的成员变量有默认的修饰符：public static final</p>
-<p>#####4.2构造方法<br>接口没有构造方法。因为接口中的成员变量都被final修饰，定义的时候必须做初始化</p>
-<p>#####4.3成员方法<br>接口中的方法都是抽象方法，没有方法体。因为接口中的成员方法有默认修饰符public abstract</p>
-<p>####5.思想特点<br>a.    接口是对外暴露的规则<br>b.    接口是程序的功能拓展<br>c.    接口的出现降低耦合性<br>d.    接口可以用来多实现</p>
-<p>#####6.使用场景<br>随着人的年纪的增加，会学习舞蹈，吉他，这些都是后天培养的拓展的功能，所以应该把学习跳舞和学习吉他定义为接口，这些后天学习的拓展功能应该定义在接口里</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSe</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/24/JavaSe/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaSe基础 —  面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaSe基础-—-面向对象"><a href="#JavaSe基础-—-面向对象" class="headerlink" title="##JavaSe基础 —    面向对象"></a>##JavaSe基础 —    面向对象</h2><h2 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="###面向对象的三大思想特征：封装，继承，多态"></a>###面向对象的三大思想特征：封装，继承，多态</h2><p>###1. 封装</p>
-<p>####1.1 定义：<br>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）<br><!--阅读更多--></p>
-<p>####1.2 private关键字<br>可用于修饰成员内容，包括成员变量和成员方法，被他修饰完毕后的内容，在其他类中是不能直接访问的，换句话说就是被private修饰的内容只能在本类中使用</p>
-<p>####1.3 getter/setter方法的使用<br>因为类的属性被私有化，只能在本类中访问，其他类想要访问就需要提供getter方法和setter方法。但这两个方法时相互独立的，不一定必须出现（get方法和set方法的名字可以随便起，只不过大家通过方法访问私有属性的时候形成了一个默认的规则：设置类的属性值通过setXxx()方法，获取类的属性通过getXxx()方法）。</p>
-<p>####1.4 this关键字<br>a.this关键字只能代表本类对象<br>b.this关键字代表所属方法的所属对象<br>c.谁调用this，this就代表谁<br>d.this可用于区分成员变量和局部变量同名的情况（例如this.属性名代表的是成员变量）</p>
-<p>####1.5 构造方法</p>
-<p>#####1.5.1    特点：<br>a.方法名必须和类名保持一致<br>b.没有返回值类型并且没有具体的返回值，连void都没有</p>
-<p>#####1.5.2 作用：<br>给对象的属性进行初始化</p>
-<p>#####1.5.3 注意事项<br>a.如果没有明确给出构造方法，系统会默认给出一个无参的构造方法<br>b.只要给出明确的构造方法，系统将不会提供任何的构造方法<br>c.构造方法的重载体现在参数的不同（包括参数类型、个数以及顺序）</p>
-<p>####1.6 给私有属性赋值的方式<br>a.通过set方法（推荐使用）<br>b.通过构造方法<br>c.在定义成员变量的时候就赋值<br>例如：private String name = “张三”；<br>d.通过反射中的Fied类中的对象给对象的属性赋值</p>
-<p>####1.7构造方法和setter方法的区别<br>a.构造方法是在创建对象的时候赋值，只能赋值一次<br>b.setter方法是在创建完对象以后再给对象的属性赋值，能赋值多次</p>
-<p>代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>.</div><div class="line"><span class="number">2</span>.<span class="comment">/**</span></div><div class="line">3. * </div><div class="line">4.一个类的代码分布图：</div><div class="line">5.</div><div class="line">6.    属性 </div><div class="line">7.    构造方法 </div><div class="line">8.    成员方法 </div><div class="line">9.    get方法和set方法</div><div class="line">10. */</div><div class="line"><span class="number">11</span>.<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"><span class="number">12</span>.	<span class="comment">/** 姓名 */</span></div><div class="line"><span class="number">13</span>.	<span class="keyword">private</span> String name;</div><div class="line"><span class="number">14</span>.</div><div class="line"><span class="number">15</span>.	<span class="comment">/** 年龄 */</span></div><div class="line"><span class="number">16</span>.	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line"><span class="number">17</span>.</div><div class="line"><span class="number">18</span>.	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="number">19</span>.	&#125;</div><div class="line"><span class="number">20</span>.</div><div class="line"><span class="number">21</span>.	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line"><span class="number">22</span>.		<span class="keyword">super</span>();</div><div class="line"><span class="number">23</span>.		<span class="keyword">this</span>.name = name;</div><div class="line"><span class="number">24</span>.		<span class="keyword">this</span>.age = age;</div><div class="line"><span class="number">25</span>.	&#125;</div><div class="line"><span class="number">26</span>.</div><div class="line"><span class="number">27</span>.	<span class="comment">/**</span></div><div class="line">28.	 * 获取姓名</div><div class="line">29.	 * </div><div class="line">30.	 * <span class="doctag">@return</span> name 姓名</div><div class="line">31.	 */</div><div class="line"><span class="number">32</span>.	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="number">33</span>.		<span class="keyword">return</span> name;</div><div class="line"><span class="number">34</span>.	&#125;</div><div class="line"><span class="number">35</span>.</div><div class="line"><span class="number">36</span>.	<span class="comment">/**</span></div><div class="line">37.	 * 设置姓名</div><div class="line">38.	 * </div><div class="line">39.	 * <span class="doctag">@param</span> name</div><div class="line">40.	 *            姓名</div><div class="line">41.	 */</div><div class="line"><span class="number">42</span>.	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line"><span class="number">43</span>.		<span class="keyword">this</span>.name = name;</div><div class="line"><span class="number">44</span>.	&#125;</div><div class="line"><span class="number">45</span>.</div><div class="line"><span class="number">46</span>.	<span class="comment">/**</span></div><div class="line">47.	 * 获取年龄</div><div class="line">48.	 * </div><div class="line">49.	 * <span class="doctag">@return</span> age 年龄</div><div class="line">50.	 */</div><div class="line"><span class="number">51</span>.	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="number">52</span>.		<span class="keyword">return</span> age;</div><div class="line"><span class="number">53</span>.	&#125;</div><div class="line"><span class="number">54</span>.</div><div class="line"><span class="number">55</span>.	<span class="comment">/**</span></div><div class="line">56.	 * 设置年龄</div><div class="line">57.	 * </div><div class="line">58.	 * <span class="doctag">@param</span> age</div><div class="line">59.	 *            年龄</div><div class="line">60.	 */</div><div class="line"><span class="number">61</span>.	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line"><span class="number">62</span>.		<span class="keyword">this</span>.age = age;</div><div class="line"><span class="number">63</span>.	&#125;</div><div class="line"><span class="number">64</span>.</div><div class="line"><span class="number">65</span>.&#125;</div><div class="line"></div><div class="line">测试类</div><div class="line"></div><div class="line"><span class="number">1</span>.<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"><span class="number">2</span>.	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"><span class="number">3</span>.		<span class="comment">//通过无参构造创建对象，并给成员变量赋值</span></div><div class="line"><span class="number">4</span>.		Student zs = <span class="keyword">new</span> Student();</div><div class="line"><span class="number">5</span>.		zs.setName(<span class="string">"张三"</span>);</div><div class="line"><span class="number">6</span>.		zs.setAge(<span class="number">13</span>);</div><div class="line"><span class="number">7</span>.		</div><div class="line"><span class="number">8</span>.		<span class="comment">//通过有参构造创建对象，并给成员变量赋值</span></div><div class="line"><span class="number">9</span>.		Student ls = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">14</span>);</div><div class="line"><span class="number">10</span>.		</div><div class="line"><span class="number">11</span>.		<span class="comment">//调用对象的方法</span></div><div class="line"><span class="number">12</span>.		System.out.println(zs.getName()+<span class="string">"----"</span>+zs.getAge());</div><div class="line"><span class="number">13</span>.		System.out.println(ls.getName()+<span class="string">"----"</span>+ls.getAge());</div><div class="line"><span class="number">14</span>.	&#125;</div><div class="line"><span class="number">15</span>.&#125;</div></pre></td></tr></table></figure></p>
-<p>####1.8 static关键字</p>
-<p>#####1.8.1 定义<br>static意为静态，可以修饰成员变量和成员方法，被static修饰的成员，可以被该类下的所有对象共享（例如 private static int number = 10; 这个number变量就可以被该类下所有对象使用）</p>
-<p>#####1.8.2特点<br>a.被static修饰的成员随着类的加载而加载， 并且优先于对象而存在（即在内存中加载完该成员才到对象的创建）<br>b.可以通过类名<strong>.</strong>直接调用<br>c.被该类下所有对象共享</p>
-<p>#####1.8.3注意事项<br>a.在静态方法中没有this关键字，因为静态是随着类的加载而加载，而this关键字是对象创建才存在的<br>b.静态方法只能访问静态成员变量和静态的方法（即静态只能访问静态）<br>c.静态内容可以通过创建对象调用，也可以直接通过类名<strong>.</strong>调用。（推荐通过类名点调用）</p>
-<hr>
-<p>###2.继承</p>
-<p>####2.1由来和定义<br>a.在多个类中存在相同的属性和行为时，将这些内容抽取到单个类中，那么多个类无需再定义该属性和行为，只需要继承那单个类即可<br>b.多个类成为子类或派生类，单个类成为超类或者父类又或者基类</p>
-<p>####2.2好处和弊端<br>a.提高代码的复用性<br>b.使类与类产生关系，是多态的前提<br>c.Java中只支持单继承，不支持多继承，但支持多层继承</p>
-<p>####2.3使用场景<br>子类是父类的一种，比如猫继承动物，猫就是子类，动物就是父类（注意：不要为了获取某个功能而去继承）</p>
-<p>####2.4this和super比较</p>
-<p>#####2.4.1概念上的区别<br>super代表的是父类内存空间标识<br>this代表所在方法所属对象的引用</p>
-<p>#####2.4.2super使用场景<br>a.当子父类中出现同名成员可以用super区分<br>b.子类调用父类的构造方法可以用super<strong>.</strong>方法名调用</p>
-<p>#####2.4.3注意事项<br>a.构造方法中的this()和super()语句必须放在第一行，并且只能取其一<br>b.如果父类中无无参构造，子类只能通过super(参数)调用父类的构造方法，通过this(…)调用本类的构造方法</p>
-<p>####2.5重写OverRide和重载OverLoad</p>
-<p>#####2.5.1重写OverRide<br>在子父类关系中，子类中存在与父类中<strong>方法声明</strong>完全一样的方法叫重写（即除了方法体不一样，其他都是一样的，但子类的权限要大于等于父类的）</p>
-<p>#####2.5.2重载OverLoad<br>在一个类中或者在子父类中存在多个同名方法，并且参数列表不同的方法叫重载</p>
-<p>#####2.5.3注意事项<br>a.只有方法才存在重写，变量不存在重写这一说法<br>b.父类中的私有方法不能被覆盖</p>
-<p>####2.6final关键字</p>
-<p>#####2.6.1定义<br>很多时候有些方法内容时不能被重写的。而我们知道父类方法声明为public就可以被重写。针对这种情况，我们可以做个标记，告诉别人此类不能被重写<br>final ：最终的意思，可以修饰类，变量以及成员方法</p>
-<p>#####2.6.2被final修饰的特点<br>a.被final修饰的方法不能被重写<br>b.被final修饰的类不能被继承<br>c.被final修饰的变量其实就是常量，必须显示地赋值，并且命名要全部大写，每个单词之间用下划线连接起来</p>
-<p>#####2.6.3被final修饰的类<br>java.lang.reflect.Array</p>
-<pre><code>boolean的包装类java.lang.Boolean
-
-byte的包装类java.lang.Byte
-
-char的包装类java.lang.Character
-
-double的包装类java.lang.Double
-
-float的包装类java.lang.Float
-
-int的包装类java.lang.Integer
-
-long的包装类java.lang.Long
-
-short的包装类java.lang.Short
-
-void的包装类java.lang.Void
-
-String类java.lang.String
-
-System类java.lang.System
-
-Class类java.lang.Class&lt;T&gt;
-
-编译器java.lang.Compiler类
-
-Math类java.lang.Math
-
-两个可变字符序列类java.lang.StringBuffer与java.lang.StringBuilder
-
-Scanner类java.util.Scanner
-
-正则匹配器java.util.regex.Matcher
-
-正则表达式编译形式类java.util.regex.Pattern
-</code></pre><hr>
-<p>###3.多态 </p>
-<p>####3.1多态的定义<br>对象在不同时刻表现出来的不同状态</p>
-<p>####3.2多态的前提条件<br>a.要有继承关系或者实现关系<br>b.要有方法重写或者实现关系<br>c.要有父类引用指向子类对象或者父类接口指向子类对象</p>
-<p>####3.3多态的成员特点</p>
-<p>#####3.3.1成员变量<br>编译看等号左边，运行看等号左边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu  = <span class="keyword">new</span> Zi();</div><div class="line">System.out.println(fu.name);<span class="comment">//调用的是父类的name属性</span></div></pre></td></tr></table></figure></p>
-<p>#####3.3.2成员方法<br>编译看等号的左边，运行看等号的右边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu = <span class="keyword">new</span> Zi();</div><div class="line">fu.show();<span class="comment">//调用的是子类的show()</span></div></pre></td></tr></table></figure></p>
-<p><strong>小结：方法运行看右边</strong></p>
-<p>####3.4多态的好处和弊端</p>
-<p>#####3.4.1弊端<br>父类引用不能直接使用子类对象的特有功能，只能通过向下转型（强转）实现</p>
-<p>#####3.4.2好处<br>增强了程序的拓展性和可维护性，大大减少了维护成本</p>
-<hr>
-<p>##拓展</p>
-<p>###抽象类</p>
-<p>####1.由来<br>类里面封装的是相关的属性和行为，但是有些行为我们是不确定做什么的，这个时候我们就把这个方法用abstract修饰，当方法被这个关键字修饰以后，就不能有方法体了，并且这个类也必须被abstract修饰，这就是抽象类的由来</p>
-<p>####2.定义<br>如果一个类中含有抽象方法，这个类就可以被称为抽象类，该类也需要被abstract修饰。它的作用是强制要求子类必须实现某些功能<br>（抽象方法：只有方法声明，没有方法体，被abstract修饰）</p>
-<p>####3.格式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义抽象类的格式</span></div><div class="line">       <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">                  System.out.println(<span class="string">"我在跑步"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;     </div><div class="line">	<span class="comment">//使用格式1 </span></div><div class="line">    <span class="comment">//定义个普通类，继承抽象类，必须实现抽象类中的抽象方法</span></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">                   System.out.println(<span class="string">"狗吃骨头"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">   <span class="comment">//使用格式2</span></div><div class="line">   <span class="comment">//定义一个抽象类继承抽象类，不是必须要实现父类的抽象方法</span></div><div class="line">        <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
-<p>####4.基本特点<br>a. 抽象方法和抽象类用关键字abstract表示。<br>b. 有抽象方法的类一定是抽象类(或者接口)。抽象类中不一定有抽象方法。<br>c. 抽象类不能被实例化。<br>d. 如果一个类继承抽象类，那么这个类要么本身也是抽象类。这个类 必须重写父类的所有抽象方法。</p>
-<p>####5.成员特点</p>
-<p>#####5.1 成员变量<br>可以有成员变量，也可以有常量</p>
-<p>#####5.2 构造方法<br>抽象类有构造方法，但是不能通过构造方法创建对象，构造方法的作用是让子类访问父类数据之前，对父类数据进行初始化</p>
-<p>#####5.3成员方法<br>可以有抽象方法，也可以有非抽象方法<br>抽象方法是为了要求子类做某些事情<br>非抽象方法是为了提高代码的复用性，被子类继承</p>
-<p>#####6.使用场景<br>  人刚生下来就具备哭的行为特征，但是每个人哭的行为不一样，所以人应该定义为抽象类，这些与生俱来的属性和行为应该定义在类里面</p>
-<p>###接口</p>
-<p>####1.定义<br>我们可以把接口看成是一种特殊的抽象类。比抽象类更抽象。因为它里面的方法都是抽象的。但是注意，接口不是类，我们只是把他看成类</p>
-<p>####2.格式<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义格式</span></div><div class="line">	 <span class="class"><span class="keyword">interface</span> 接口名 </span>&#123;</div><div class="line">	     <span class="comment">//静态常量和抽象方法</span></div><div class="line">	 &#125;		</div><div class="line"><span class="comment">//使用格式	</span></div><div class="line">	<span class="comment">//一个类实现一个接口	</span></div><div class="line">     <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">implements</span> 接口名1，接口名2... </span>&#123;</div><div class="line">           <span class="comment">//覆盖接口中的全部方法</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">	<span class="comment">//一个抽象类实现一个接口，不必重写接口中的抽象方法</span></div><div class="line">      <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> 接口1, 接口2,接口..... </span>&#123;</div><div class="line">           <span class="comment">//方法体不需要全部都覆盖</span></div><div class="line">      &#125;</div><div class="line">	<span class="comment">//一个接口继承一个接口</span></div><div class="line">       <span class="class"><span class="keyword">interface</span> 接口名 <span class="keyword">extends</span> 接口1，接口2.. </span>&#123;</div><div class="line">       &#125;</div></pre></td></tr></table></figure></p>
-<p>####3.基本特点<br>a. 接口不能被实例化<br>b. 接口中的方法要么被子类重写，要么子类也是抽象类</p>
-<p>####4.成员特点</p>
-<p>#####4.1 成员变量<br>接口中只有常量。因为接口中的成员变量有默认的修饰符：public static final</p>
-<p>#####4.2构造方法<br>接口没有构造方法。因为接口中的成员变量都被final修饰，定义的时候必须做初始化</p>
-<p>#####4.3成员方法<br>接口中的方法都是抽象方法，没有方法体。因为接口中的成员方法有默认修饰符public abstract</p>
-<p>####5.思想特点<br>a.    接口是对外暴露的规则<br>b.    接口是程序的功能拓展<br>c.    接口的出现降低耦合性<br>d.    接口可以用来多实现</p>
-<p>#####6.使用场景<br>随着人的年纪的增加，会学习舞蹈，吉他，这些都是后天培养的拓展的功能，所以应该把学习跳舞和学习吉他定义为接口，这些后天学习的拓展功能应该定义在接口里</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/24/JavaSe基础 —  面向对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Java基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Java基础知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -720,64 +441,31 @@ Scanner类java.util.Scanner
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/24/Java基础知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/23/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-23T05:04:22.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://ooo.0o0.ooo/2017/02/22/58ad3d121734b.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -786,18 +474,83 @@ Scanner类java.util.Scanner
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/hello-world/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunterblog.cn/2017/02/24/Java基础知识/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+    <a href="/2017/02/24/JavaSe基础 —  面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -805,71 +558,10 @@ Scanner类java.util.Scanner
 
 
   
-    <article id="post-Test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/23/Test/">Test</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/02/23/Test/" class="archive-article-date">
-  	<time datetime="2017-02-22T16:56:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>测试<br>
-        
-          <a class="article-more-a" href="/2017/02/23/Test/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/23/Test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -891,8 +583,8 @@ Scanner类java.util.Scanner
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
