@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hunterblog.cn/2017/02/24/JavaSe/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
 <meta property="og:description" content="面向对象的三大思想特征：封装，继承，多态1. 封装1.1 定义：指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）">
-<meta property="og:updated_time" content="2017-02-24T15:21:26.650Z">
+<meta property="og:updated_time" content="2017-02-24T15:25:05.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSe之面向对象">
 <meta name="twitter:description" content="面向对象的三大思想特征：封装，继承，多态1. 封装1.1 定义：指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）">
@@ -59,8 +59,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/">随笔</a></li>
 	        
 				<li><a href="/archives">所有文章</a></li>
 	        
@@ -116,8 +114,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -133,14 +129,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/">随笔</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/archives">所有文章</a></li>
+					<li style="width: 50%"><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -200,8 +194,9 @@
 <h5 id="2-5-3注意事项"><a href="#2-5-3注意事项" class="headerlink" title="2.5.3注意事项"></a>2.5.3注意事项</h5><p>a.只有方法才存在重写，变量不存在重写这一说法<br>b.父类中的私有方法不能被覆盖</p>
 <h4 id="2-6final关键字"><a href="#2-6final关键字" class="headerlink" title="2.6final关键字"></a>2.6final关键字</h4><h5 id="2-6-1定义"><a href="#2-6-1定义" class="headerlink" title="2.6.1定义"></a>2.6.1定义</h5><p>很多时候有些方法内容时不能被重写的。而我们知道父类方法声明为public就可以被重写。针对这种情况，我们可以做个标记，告诉别人此类不能被重写<br>final ：最终的意思，可以修饰类，变量以及成员方法</p>
 <h5 id="2-6-2被final修饰的特点"><a href="#2-6-2被final修饰的特点" class="headerlink" title="2.6.2被final修饰的特点"></a>2.6.2被final修饰的特点</h5><p>a.被final修饰的方法不能被重写<br>b.被final修饰的类不能被继承<br>c.被final修饰的变量其实就是常量，必须显示地赋值，并且命名要全部大写，每个单词之间用下划线连接起来</p>
-<h5 id="2-6-3被final修饰的类"><a href="#2-6-3被final修饰的类" class="headerlink" title="2.6.3被final修饰的类"></a>2.6.3被final修饰的类</h5><p>java.lang.reflect.Array</p>
-<pre><code>boolean的包装类java.lang.Boolean
+<h5 id="2-6-3被final修饰的类"><a href="#2-6-3被final修饰的类" class="headerlink" title="2.6.3被final修饰的类"></a>2.6.3被final修饰的类</h5><pre><code>java.lang.reflect.Array
+
+boolean的包装类java.lang.Boolean
 
 byte的包装类java.lang.Byte
 
