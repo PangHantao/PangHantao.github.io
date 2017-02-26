@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hunterblog.cn/2017/02/24/JavaSe/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
 <meta property="og:description" content="封装,继承,多态,抽象类,接口">
-<meta property="og:updated_time" content="2017-02-25T09:06:08.362Z">
+<meta property="og:updated_time" content="2017-02-26T12:28:01.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSe之面向对象">
 <meta name="twitter:description" content="封装,继承,多态,抽象类,接口">
@@ -169,7 +169,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="面向对象的三大思想特征：封装，继承，多态"></a>面向对象的三大思想特征：封装，继承，多态</h3><h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><h4 id="1-1-定义："><a href="#1-1-定义：" class="headerlink" title="1.1 定义："></a>1.1 定义：</h4><p>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）<br><a id="more"></a></p>
+        <blockquote>
+<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/和作者**：**Hunter，谢谢支持。">http://hunterblog.cn/和作者**：**Hunter，谢谢支持。</a></p>
+</blockquote>
+<hr>
+<p><strong>此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</strong></p>
+<!--阅读更多-->
+<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p><strong>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名(); </strong></p>
+<h3 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="面向对象的三大思想特征：封装，继承，多态"></a>面向对象的三大思想特征：封装，继承，多态</h3><h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><h4 id="1-1-定义："><a href="#1-1-定义：" class="headerlink" title="1.1 定义："></a>1.1 定义：</h4><p>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）</p>
 <h4 id="1-2-private关键字"><a href="#1-2-private关键字" class="headerlink" title="1.2 private关键字"></a>1.2 private关键字</h4><p>可用于修饰成员内容，包括成员变量和成员方法，被他修饰完毕后的内容，在其他类中是不能直接访问的，换句话说就是被private修饰的内容只能在本类中使用</p>
 <h4 id="1-3-getter-setter方法的使用"><a href="#1-3-getter-setter方法的使用" class="headerlink" title="1.3 getter/setter方法的使用"></a>1.3 getter/setter方法的使用</h4><p>因为类的属性被私有化，只能在本类中访问，其他类想要访问就需要提供getter方法和setter方法。但这两个方法时相互独立的，不一定必须出现（get方法和set方法的名字可以随便起，只不过大家通过方法访问私有属性的时候形成了一个默认的规则：设置类的属性值通过setXxx()方法，获取类的属性通过getXxx()方法）。</p>
 <h4 id="1-4-this关键字"><a href="#1-4-this关键字" class="headerlink" title="1.4 this关键字"></a>1.4 this关键字</h4><p>a.this关键字只能代表本类对象<br>b.this关键字代表所属方法的所属对象<br>c.谁调用this，this就代表谁<br>d.this可用于区分成员变量和局部变量同名的情况（例如this.属性名代表的是成员变量）</p>
@@ -194,9 +201,8 @@
 <h5 id="2-5-3注意事项"><a href="#2-5-3注意事项" class="headerlink" title="2.5.3注意事项"></a>2.5.3注意事项</h5><p>a.只有方法才存在重写，变量不存在重写这一说法<br>b.父类中的私有方法不能被覆盖</p>
 <h4 id="2-6final关键字"><a href="#2-6final关键字" class="headerlink" title="2.6final关键字"></a>2.6final关键字</h4><h5 id="2-6-1定义"><a href="#2-6-1定义" class="headerlink" title="2.6.1定义"></a>2.6.1定义</h5><p>很多时候有些方法内容时不能被重写的。而我们知道父类方法声明为public就可以被重写。针对这种情况，我们可以做个标记，告诉别人此类不能被重写<br>final ：最终的意思，可以修饰类，变量以及成员方法</p>
 <h5 id="2-6-2被final修饰的特点"><a href="#2-6-2被final修饰的特点" class="headerlink" title="2.6.2被final修饰的特点"></a>2.6.2被final修饰的特点</h5><p>a.被final修饰的方法不能被重写<br>b.被final修饰的类不能被继承<br>c.被final修饰的变量其实就是常量，必须显示地赋值，并且命名要全部大写，每个单词之间用下划线连接起来</p>
-<h5 id="2-6-3被final修饰的类"><a href="#2-6-3被final修饰的类" class="headerlink" title="2.6.3被final修饰的类"></a>2.6.3被final修饰的类</h5><pre><code>java.lang.reflect.Array
-
-boolean的包装类java.lang.Boolean
+<h5 id="2-6-3被final修饰的类"><a href="#2-6-3被final修饰的类" class="headerlink" title="2.6.3被final修饰的类"></a>2.6.3被final修饰的类</h5><p>java.lang.reflect.Array</p>
+<pre><code>boolean的包装类java.lang.Boolean
 
 byte的包装类java.lang.Byte
 
@@ -242,7 +248,7 @@ Scanner类java.util.Scanner
 <hr>
 <h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><h4 id="1-由来"><a href="#1-由来" class="headerlink" title="1.由来"></a>1.由来</h4><p>类里面封装的是相关的属性和行为，但是有些行为我们是不确定做什么的，这个时候我们就把这个方法用abstract修饰，当方法被这个关键字修饰以后，就不能有方法体了，并且这个类也必须被abstract修饰，这就是抽象类的由来</p>
 <h4 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h4><p>如果一个类中含有抽象方法，这个类就可以被称为抽象类，该类也需要被abstract修饰。它的作用是强制要求子类必须实现某些功能<br>（抽象方法：只有方法声明，没有方法体，被abstract修饰）</p>
-<h4 id="3-格式"><a href="#3-格式" class="headerlink" title="3.格式"></a>3.格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义抽象类的格式</span></div><div class="line">       <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">                  System.out.println(<span class="string">"我在跑步"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;     </div><div class="line">    <span class="comment">//使用格式1 </span></div><div class="line">    <span class="comment">//定义个普通类，继承抽象类，必须实现抽象类中的抽象方法</span></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">                   System.out.println(<span class="string">"狗吃骨头"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">   <span class="comment">//使用格式2</span></div><div class="line">   <span class="comment">//定义一个抽象类继承抽象类，不是必须要实现父类的抽象方法</span></div><div class="line">        <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h4 id="3-格式"><a href="#3-格式" class="headerlink" title="3.格式"></a>3.格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义抽象类的格式</span></div><div class="line">       <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">                  System.out.println(<span class="string">"我在跑步"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;     </div><div class="line">	<span class="comment">//使用格式1 </span></div><div class="line">    <span class="comment">//定义个普通类，继承抽象类，必须实现抽象类中的抽象方法</span></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">                   System.out.println(<span class="string">"狗吃骨头"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">   <span class="comment">//使用格式2</span></div><div class="line">   <span class="comment">//定义一个抽象类继承抽象类，不是必须要实现父类的抽象方法</span></div><div class="line">        <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
 <h4 id="4-基本特点"><a href="#4-基本特点" class="headerlink" title="4.基本特点"></a>4.基本特点</h4><p>a. 抽象方法和抽象类用关键字abstract表示。<br>b. 有抽象方法的类一定是抽象类(或者接口)。抽象类中不一定有抽象方法。<br>c. 抽象类不能被实例化。<br>d. 如果一个类继承抽象类，那么这个类要么本身也是抽象类。这个类 必须重写父类的所有抽象方法。</p>
 <h4 id="5-成员特点"><a href="#5-成员特点" class="headerlink" title="5.成员特点"></a>5.成员特点</h4><h5 id="5-1-成员变量"><a href="#5-1-成员变量" class="headerlink" title="5.1 成员变量"></a>5.1 成员变量</h5><p>可以有成员变量，也可以有常量</p>
 <h5 id="5-2-构造方法"><a href="#5-2-构造方法" class="headerlink" title="5.2 构造方法"></a>5.2 构造方法</h5><p>抽象类有构造方法，但是不能通过构造方法创建对象，构造方法的作用是让子类访问父类数据之前，对父类数据进行初始化</p>
@@ -259,32 +265,6 @@ Scanner类java.util.Scanner
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="https://ooo.0o0.ooo/2017/02/22/58ad3d121734b.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
