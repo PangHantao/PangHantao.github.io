@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hunterblog.cn/2017/02/24/JavaSe/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
 <meta property="og:description" content="封装,继承,多态,抽象类,接口">
-<meta property="og:updated_time" content="2017-02-26T12:50:57.923Z">
+<meta property="og:updated_time" content="2017-02-26T12:54:07.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSe之面向对象">
 <meta name="twitter:description" content="封装,继承,多态,抽象类,接口">
@@ -169,13 +169,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> 和作者<strong>：</strong>Hunter，谢谢支持。</p>
-</blockquote>
-<hr>
-<p><strong>此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</strong></p>
-<a id="more"></a>
-<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p><strong>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名(); </strong></p>
+        <p><strong>此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</strong></p>
+<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p><strong>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名(); </strong><br><a id="more"></a></p>
 <h3 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="面向对象的三大思想特征：封装，继承，多态"></a>面向对象的三大思想特征：封装，继承，多态</h3><h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><h4 id="1-1-定义："><a href="#1-1-定义：" class="headerlink" title="1.1 定义："></a>1.1 定义：</h4><p>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）</p>
 <h4 id="1-2-private关键字"><a href="#1-2-private关键字" class="headerlink" title="1.2 private关键字"></a>1.2 private关键字</h4><p>可用于修饰成员内容，包括成员变量和成员方法，被他修饰完毕后的内容，在其他类中是不能直接访问的，换句话说就是被private修饰的内容只能在本类中使用</p>
 <h4 id="1-3-getter-setter方法的使用"><a href="#1-3-getter-setter方法的使用" class="headerlink" title="1.3 getter/setter方法的使用"></a>1.3 getter/setter方法的使用</h4><p>因为类的属性被私有化，只能在本类中访问，其他类想要访问就需要提供getter方法和setter方法。但这两个方法时相互独立的，不一定必须出现（get方法和set方法的名字可以随便起，只不过大家通过方法访问私有属性的时候形成了一个默认的规则：设置类的属性值通过setXxx()方法，获取类的属性通过getXxx()方法）。</p>
@@ -262,6 +257,9 @@ Scanner类java.util.Scanner
 <h5 id="4-3成员方法"><a href="#4-3成员方法" class="headerlink" title="4.3成员方法"></a>4.3成员方法</h5><p>接口中的方法都是抽象方法，没有方法体。因为接口中的成员方法有默认修饰符public abstract</p>
 <h4 id="5-思想特点"><a href="#5-思想特点" class="headerlink" title="5.思想特点"></a>5.思想特点</h4><p>a.    接口是对外暴露的规则<br>b.    接口是程序的功能拓展<br>c.    接口的出现降低耦合性<br>d.    接口可以用来多实现</p>
 <h5 id="6-使用场景-1"><a href="#6-使用场景-1" class="headerlink" title="6.使用场景"></a>6.使用场景</h5><p>随着人的年纪的增加，会学习舞蹈，吉他，这些都是后天培养的拓展的功能，所以应该把学习跳舞和学习吉他定义为接口，这些后天学习的拓展功能应该定义在接口里</p>
+<blockquote>
+<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> 和作者<strong>：</strong>Hunter，谢谢支持。</p>
+</blockquote>
 
       
 
@@ -447,11 +445,11 @@ Scanner类java.util.Scanner
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
+                <a href="javascript:void(0)" class="js-tag color5">Test</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Test</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
               </li>
             
             <div class="clearfix"></div>
