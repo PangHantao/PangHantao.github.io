@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunterblog.cn">
-  <title>Hunter &#39; blog</title>
+  <title>Archives | Hunter &#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hunter ' blog">
-<meta property="og:url" content="http://hunterblog.cn/index.html">
+<meta property="og:url" content="http://hunterblog.cn/archives/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hunter ' blog">
@@ -27,16 +27,7 @@
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?47d0e10561cef4979365ca9c22990c1f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
+  
 
   
 
@@ -152,37 +143,34 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-EclipseForUse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/02/27/EclipseForUse/" class="archive-article-date">
+  	<time datetime="2017-02-27T11:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/27/EclipseForUse/">Eclipse常用快捷键以及常见设置</a>
+      <a class="archive-article-title" href="/2017/02/27/EclipseForUse/">Eclipse常用快捷键以及常见设置</a>
     </h1>
   
 
-        
-        <a href="/2017/02/27/EclipseForUse/" class="archive-article-date">
-  	<time datetime="2017-02-27T11:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Eclipse作为一个常用的开发工具，其功能也比较强大，要想在Eclipse中快速高效地进行开发，使用快捷键能使我们在开发中达到事半功倍的效果，下面将介绍关于Eclipse的一些常用的快捷键以及一些常见设置，希望能帮助到各位Coder。 </strong></p>
-        
-          <a class="article-more-a" href="/2017/02/27/EclipseForUse/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -194,60 +182,33 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/27/EclipseForUse/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
-    <article id="post-JavaSe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class="article-header">
-        
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/02/24/JavaSe/" class="archive-article-date">
+  	<time datetime="2017-02-24T14:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/24/JavaSe/">JavaSe之面向对象</a>
+      <a class="archive-article-title" href="/2017/02/24/JavaSe/">JavaSe之面向对象</a>
     </h1>
   
 
-        
-        <a href="/2017/02/24/JavaSe/" class="archive-article-date">
-  	<time datetime="2017-02-24T14:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>注：此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</strong></p>
-<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名();<br>
-        
-          <a class="article-more-a" href="/2017/02/24/JavaSe/#more">阅读全文 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -259,29 +220,19 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/24/JavaSe/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -303,9 +254,9 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
