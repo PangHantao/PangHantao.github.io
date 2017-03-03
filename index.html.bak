@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunterblog.cn">
-  <title>helloWorld | Hunter &#39; blog</title>
+  <title>Hunter &#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="helloWorld">
-<meta property="og:url" content="http://hunterblog.cn/2017/03/04/helloWorld/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hunter ' blog">
+<meta property="og:url" content="http://hunterblog.cn/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
-<meta property="og:description" content="测试">
-<meta property="og:updated_time" content="2017-03-03T20:13:06.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="helloWorld">
-<meta name="twitter:description" content="测试">
+<meta name="twitter:title" content="Hunter ' blog">
   
     <link rel="alternative" href="/atom.xml" title="Hunter &#39; blog" type="application/atom+xml">
   
@@ -145,14 +141,16 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-helloWorld" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-helloWorld" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      helloWorld
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/04/helloWorld/">helloWorld</a>
     </h1>
   
 
@@ -165,8 +163,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><a id="more"></a>
-<h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><h4 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h4><h5 id="测试-4"><a href="#测试-4" class="headerlink" title="测试"></a>测试</h5><h6 id="测试-5"><a href="#测试-5" class="headerlink" title="测试"></a>测试</h6>
+        <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1>
+        
+          <a class="article-more-a" href="/2017/03/04/helloWorld/#more">阅读全文 >></a>
+        
       
 
       
@@ -188,74 +188,18 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/04/helloWorld/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunterblog.cn/2017/03/04/helloWorld/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-  
-<nav id="article-nav">
-  
-  
-    <a href="/2017/03/02/MySql-install/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MySQL的安装和配置</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
+
 
 
 
@@ -263,28 +207,201 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="helloWorld" data-title="helloWorld" data-url="http://hunterblog.cn/2017/03/04/helloWorld/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    <article id="post-MySql-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/02/MySql-install/">MySQL的安装和配置</a>
+    </h1>
   
 
+        
+        <a href="/2017/03/02/MySql-install/" class="archive-article-date">
+  	<time datetime="2017-03-02T06:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="下面介绍MySQL的安装和配置"><a href="#下面介绍MySQL的安装和配置" class="headerlink" title="下面介绍MySQL的安装和配置"></a>下面介绍MySQL的安装和配置</h3><blockquote>
+<p>注：本文将以MySQL5.5作为示例(32位和64位的安装是一样的，具体请根据自己的电脑版本选择)这里有一个32位和64位MySQL的安装包，有需要的同学可以自取。<br>
+        
+          <a class="article-more-a" href="/2017/03/02/MySql-install/#more">阅读全文 >></a>
+        
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/02/MySql-install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-EclipseForUse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/27/EclipseForUse/">Eclipse常用快捷键以及常见设置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/27/EclipseForUse/" class="archive-article-date">
+  	<time datetime="2017-02-27T11:44:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Eclipse作为一个常用的开发工具，其功能也比较强大，要想在Eclipse中快速高效地进行开发，使用快捷键能使我们在开发中达到事半功倍的效果，下面将介绍关于Eclipse的一些常用的快捷键以及一些常见设置，希望能帮助到各位Coder。 </strong></p>
+        
+          <a class="article-more-a" href="/2017/02/27/EclipseForUse/#more">阅读全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Eclipse</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/27/EclipseForUse/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-JavaSe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/24/JavaSe/">JavaSe之面向对象</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/24/JavaSe/" class="archive-article-date">
+  	<time datetime="2017-02-24T14:26:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>注：此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</strong></p>
+<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名();<br>
+        
+          <a class="article-more-a" href="/2017/02/24/JavaSe/#more">阅读全文 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSe</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/24/JavaSe/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+  
 
 
           </div>
@@ -306,8 +423,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -365,11 +482,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
+                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
               </li>
              
               <li class="article-tag-list-item">
