@@ -6,41 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://hunterblog.cn">
-  <title>MySQL的安装和配置 | Hunter &#39; blog</title>
+  <title>JavaSe之集合（一） | Hunter &#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下面介绍MySQL的安装和配置
-注：本文将以MySQL5.5作为示例(32位和64位的安装是一样的，具体请根据自己的电脑版本选择)这里有一个32位和64位MySQL的安装包，有需要的同学可以自取。">
+  <meta name="description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL的安装和配置">
-<meta property="og:url" content="http://hunterblog.cn/2017/03/02/MySql-install/index.html">
+<meta property="og:title" content="JavaSe之集合（一）">
+<meta property="og:url" content="http://hunterblog.cn/2017/03/09/JavaSe-Collection/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
-<meta property="og:description" content="下面介绍MySQL的安装和配置
-注：本文将以MySQL5.5作为示例(32位和64位的安装是一样的，具体请根据自己的电脑版本选择)这里有一个32位和64位MySQL的安装包，有需要的同学可以自取。">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a1.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a2.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a3.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a4.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a5.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a6.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/a7.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b1.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b2.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b3.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b4.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b5.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b6.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b7.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b8.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b9.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b10.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b12.png">
-<meta property="og:image" content="http://olr7crcbq.bkt.clouddn.com/b13.png">
-<meta property="og:updated_time" content="2017-03-02T10:31:34.231Z">
+<meta property="og:description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c13899522b7.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c139ce6fc1e.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c150b2c75c6.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c1529536653.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c1547543d58.png">
+<meta property="og:updated_time" content="2017-03-09T14:56:48.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL的安装和配置">
-<meta name="twitter:description" content="下面介绍MySQL的安装和配置
-注：本文将以MySQL5.5作为示例(32位和64位的安装是一样的，具体请根据自己的电脑版本选择)这里有一个32位和64位MySQL的安装包，有需要的同学可以自取。">
-<meta name="twitter:image" content="http://olr7crcbq.bkt.clouddn.com/a1.png">
+<meta name="twitter:title" content="JavaSe之集合（一）">
+<meta name="twitter:description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png">
   
     <link rel="alternative" href="/atom.xml" title="Hunter &#39; blog" type="application/atom+xml">
   
@@ -168,34 +152,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MySql-install" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaSe-Collection" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL的安装和配置
+      JavaSe之集合（一）
     </h1>
   
 
         
-        <a href="/2017/03/02/MySql-install/" class="archive-article-date">
-  	<time datetime="2017-03-02T06:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
+        <a href="/2017/03/09/JavaSe-Collection/" class="archive-article-date">
+  	<time datetime="2017-03-09T10:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="下面介绍MySQL的安装和配置"><a href="#下面介绍MySQL的安装和配置" class="headerlink" title="下面介绍MySQL的安装和配置"></a>下面介绍MySQL的安装和配置</h3><blockquote>
-<p>注：本文将以MySQL5.5作为示例(32位和64位的安装是一样的，具体请根据自己的电脑版本选择)这里有一个32位和64位MySQL的安装包，有需要的同学可以自取。<br><a id="more"></a><br>链接：<a href="http://pan.baidu.com/s/1hsDmC88" target="_blank" rel="external">http://pan.baidu.com/s/1hsDmC88</a> 密码：txxd</p>
-</blockquote>
-<h4 id="一、MySQL的安装"><a href="#一、MySQL的安装" class="headerlink" title="一、MySQL的安装"></a>一、MySQL的安装</h4><p><strong>1.打开下载的文件，双击mysql-5.5.40-win64.msi，点击“Next”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a1.png" alt=""><br><strong>2.选中协议，继续点击“Next”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a2.png" alt=""><br><strong>3.选择安装类型，有“Typical（默认）”、“Complete（完全）”、“Custom（用户自定义）”三个选项。选择“Custom”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a3.png" alt=""><br><strong>4.在“Developer Components（开发者部分）”上左键单击，选择“This feature,and all subfeatures, will be installed on local hard drive.”，即“此部分，及下属子部分内容，全部安装在本地硬盘上”。在上面的“MySQL Server（mysql服务器）”、“Client Programs（mysql客户端程序）”、“Documentation（文档）”也如此操作，以保证安装所有文件。点选“Change…”，手动指定安装目录即可。</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a4.png" alt=""><br><strong>5.确认先前的设置是否有误，有误就按“Back”返回重做，确认无误就按“Install”继续安装</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a5.png" alt=""><br>在这过程中会出现两个成功安装的界面，点击“Next”即可<br><img src="http://olr7crcbq.bkt.clouddn.com/a6.png" alt=""><br><strong>6.将“Launch the MySQL Instance Configuration Wizard”选中，这里主要是询问是否继续配置MySQL数据的参数，勾选上，然后点击”Finish”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/a7.png" alt=""></p>
-<h3 id="二、MySQL参数的配置"><a href="#二、MySQL参数的配置" class="headerlink" title="二、MySQL参数的配置"></a>二、MySQL参数的配置</h3><p><strong>1.MySQL配置向导界面，点击“Next”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b1.png" alt=""><br><strong>2.选择配置方式：“Detailed Configuration（手动精确配置）”、“Standard Configuration（标准配置）”，本文选择“Detailed Configuration”，方便熟悉配置过程</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b2.png" alt=""><br><strong>3.选择服务器类型：“Developer Machine（开发测试类，mysql占用很少资源）”、“Server Machine（服务器类型，mysql占用较多资源）”、“Dedicated MySQL Server Machine（专门的数据库服务器，mysql占用所有可用资源）” ，选择“Developer Machine”类型后，点击“Next”</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b3.png" alt=""><br><strong>4.选择MySQL数据库的大致用途：“Multifunctional Database（通用多功能型，好）”、“Transactional Database Only（服务器类型，专注于事务处理，一般）”、“Non-Transactional Database Only（非事务处理型，较简单，主要做一些监控、记数用，对MyISAM数据类型的支持仅限于non-transactional），选择“Multifunctional Database”，点击“Next”继续</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b4.png" alt=""><br><strong>5.表空间设置，选择“Installation Path即可”，点击“Next”继续</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b5.png" alt=""><br><strong>6.选择网络并发连接数(同时连接的数目)，“Decision Support(DSS)/OLAP（20个左右）”、“Online Transaction Processing(OLTP)（500个左右）”、“Manual Setting（手动设置）”，选择“Manual Setting”，点击“Next”继续</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b6.png" alt=""><br><strong>7.是否启用TCP/IP链接，设定端口。如果不启用，就只能在自己的机器上访问mysql数据库，在这个页面上，您还可以选择“启用标准模式”（Enable Strict Mode），这样MySQL就不会允许细小的语法错误。如果是新手，建议您取消标准模式以减少麻烦。但熟悉MySQL以后，尽量使用标准模式，因为它可以降低有害数据进入数据库的可能性，本文选择勾选上。按“Next”继续</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b7.png" alt=""><br><strong>8.对MySQL默认数据库语言编码进行设置(重要)。选择第二个，然后将下面的“Character Set”设置为“utf-8”，点击“Next”继续安装</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b8.png" alt=""><br><strong>9.是否将MySQL安装为Windows服务。还可以指定Service Name（服务标识名称），是否将mysql的bin目录加入到Windows PATH（加入后，就可以直接使用bin下的文件，而不用指出目录名，不用指出mysql.exe的完整地址，很方便），我这里全部打上了勾，Service Name不变。按“Next”继续。</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b9.png" alt=""><br><strong>10.是否修改默认root用户的密码。“Enable root access from remote machines（是否允许root用户在其它的机器上登陆，如果要安全，就不要勾上，如果要方便，就勾上它）”。最后“Create An Anonymous Account（新建一个匿名用户，匿名用户可以连接数据库，不能操作数据，包括查询）”，一般就不用勾了，设置完毕，按“Next”继续</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b10.png" alt=""><br><strong>11.确认设置无误后，按“Execute”使设置生效，这时需要等待一小会，待图中4个框都打上勾了，即完成MYSQL的安装和配置</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b12.png" alt=""><br><strong>12.最后可以验证一下是否安装成功，打开命令行，输入“mysql -u root -p”，点击回车，输入密码，如果出现一下信息则说明安装配置成功，尽情享受数据库之旅吧！</strong><br><img src="http://olr7crcbq.bkt.clouddn.com/b13.png" alt=""></p>
+        <h3 id="1-集合概述"><a href="#1-集合概述" class="headerlink" title="1. 集合概述"></a>1. 集合概述</h3><p>由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。<br><a id="more"></a></p>
 <blockquote>
-<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> 和作者：Hunter，谢谢支持。</p>
+<p><strong>前言：</strong>本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法</p>
+<h3 id="2-集合和数组的区别"><a href="#2-集合和数组的区别" class="headerlink" title="2. 集合和数组的区别"></a>2. 集合和数组的区别</h3><p><strong>数组：</strong></p>
+<ol>
+<li>长度固定</li>
+<li>可以存储基本数据类型，也可以存储引用数据类型</li>
+<li>存储的数据类型必须要一致(比如说创建一个int类型的数组，它就只能存整数，不能存double或者String类型等)</li>
+</ol>
 </blockquote>
+<p><strong>集合：</strong></p>
+<ol>
+<li>长度可变</li>
+<li>只能存储引用数据类型</li>
+<li>可以存储不同类型的对象。(可以存int、String、double等)</li>
+</ol>
+<h3 id="3-集合的体系："><a href="#3-集合的体系：" class="headerlink" title="3. 集合的体系："></a>3. 集合的体系：</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png" alt="Colleation.png"></p>
+<h3 id="4-下面看一下各成员特点"><a href="#4-下面看一下各成员特点" class="headerlink" title="4.下面看一下各成员特点"></a>4.下面看一下各成员特点</h3><p><strong>|- -  List：</strong>有序(序指的是存和取得顺序一致，怎么样存就怎么样取)，元素可以重复<br><strong>|- - - - - - - ArrayList：</strong>底层数据结构是数组，查询快，增删慢，<strong>线程不安全，效率高</strong><br><strong>|- - - - - - - Vector：</strong>底层数据结构是数组，查询快，增删慢，<strong>线程安全，效率低</strong><br><strong>|- - - - - - - LinkedList：</strong>底层数据结构是链表，查询慢，增删快，<strong>线程不安全，效率高</strong></p>
+<p><strong>|- -  Set：</strong>无序，元素不可以重复<br><strong>|- - - - - - - HashSet：</strong>底层数据结构是哈希表，<strong>县城不安全，效率高</strong><br><strong>|- - - - - - - TreeSet：</strong>底层数据结构是二叉树，<strong>线程不安全，效率高</strong></p>
+<h3 id="5-Collection接口中的常用方法"><a href="#5-Collection接口中的常用方法" class="headerlink" title="5. Collection接口中的常用方法"></a>5. Collection接口中的常用方法</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c13899522b7.png" alt="Collection方法.png"><br><strong>注：Collection是一个根接口，继承它的子类或者子接口都能使用它的方法</strong></p>
+<h3 id="6-List集合特有的方法"><a href="#6-List集合特有的方法" class="headerlink" title="6. List集合特有的方法"></a>6. List集合特有的方法</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c139ce6fc1e.png" alt="List方法.png"></p>
+<h3 id="7-ArrayList"><a href="#7-ArrayList" class="headerlink" title="7. ArrayList"></a>7. ArrayList</h3><p>ArrayList是List接口下的一个实现类之一，也是最常用的一个集合，由于它的底层是数组结构实现的，因此可以看成是一个长度可变的数组，下面介绍关于ArrayList的常见使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//定义一个ArrayList集合</span></div><div class="line">		ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">		</div><div class="line">		arrayList.add(<span class="string">"你好"</span>); <span class="comment">//添加元素</span></div><div class="line">		arrayList.add(<span class="number">20</span>);</div><div class="line">		arrayList.add(<span class="number">20</span>); <span class="comment">//添加了重复元素</span></div><div class="line">		arrayList.set(<span class="number">0</span>, <span class="string">"hello"</span>); <span class="comment">//修改了索引为0的元素</span></div><div class="line">		<span class="keyword">int</span> size = arrayList.size(); <span class="comment">//获取集合的大小</span></div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"集合的大小为："</span>+size); <span class="comment">//输出：集合的大小为：3</span></div><div class="line">		System.out.println(arrayList.get(<span class="number">2</span>));	<span class="comment">//输出：20</span></div><div class="line">		System.out.println(arrayList); <span class="comment">//输出：[hello, 20, 20]</span></div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="7-1-集合的遍历"><a href="#7-1-集合的遍历" class="headerlink" title="7.1 集合的遍历"></a>7.1 集合的遍历</h4><p><strong>1.通过集合转数组，然后再对数组进行遍历</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Collection c = <span class="keyword">new</span> ArrayList();</div><div class="line">	c.add(<span class="string">"abc"</span>);</div><div class="line">	c.add(<span class="string">"abcd"</span>);</div><div class="line">	c.add(<span class="string">"abcde"</span>);</div><div class="line"></div><div class="line">	Object[] array = c.toArray(); <span class="comment">//将集合转为数组</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;array.length; i++)&#123; <span class="comment">//遍历输出</span></div><div class="line">	     String str = (String)array[i];</div><div class="line">	     System.out.println(str.toUpperCase());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>2.通过get()和size()方法结合(仅仅适用于Collection的子接口List接口)</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个ArrayList集合</span></div><div class="line">	ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">	arrayList.add(<span class="number">10</span>);</div><div class="line">	arrayList.add(<span class="number">50</span>);</div><div class="line">	arrayList.add(<span class="string">"你好"</span>);</div><div class="line">	arrayList.add(<span class="number">8</span>);</div><div class="line">		</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrayList.size(); i++) &#123;</div><div class="line">		Object obj =  arrayList.get(i);	<span class="comment">//根据索引获取值，在此返回的是Object数据类型</span></div><div class="line">		System.out.print(obj + <span class="string">" "</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>3.通过迭代器实现(适用于所有集合) (下面将会介绍)</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个ArrayList集合</span></div><div class="line">	ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">	arrayList.add(<span class="number">10</span>);</div><div class="line">	arrayList.add(<span class="number">50</span>);</div><div class="line">	arrayList.add(<span class="string">"你好"</span>);</div><div class="line">	arrayList.add(<span class="number">8</span>);</div><div class="line">	</div><div class="line">	<span class="comment">//第一步：创建迭代器对象</span></div><div class="line">	Iterator iterator = arrayList.iterator();</div><div class="line">	<span class="comment">//第二步：通过hasNext()方法判断迭代器中是否有元素</span></div><div class="line">	<span class="keyword">while</span> (iterator.hasNext()) &#123;</div><div class="line">		<span class="comment">//第三步：通过next()方法获取元素</span></div><div class="line">		Object object = iterator.next();</div><div class="line">		System.out.print(object + <span class="string">""</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>4.通过增强for循环遍历(适用于所有集合和数组) (推荐使用)</strong><br>注意：增强for只能操作集合和数组<br>定义格式：<br>for(数据类型 临时变量名 : 集合或者数组){</p>
+<p>}<br>例如定义了一个集合<strong>ArrayList list = new ArrayList();  </strong> 此处的集合如不指定数据类型，默认为Object类型，则它的增强for格式就为：<br>for(Object obj：list) {<br>}<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个ArrayList集合</span></div><div class="line">	ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">	arrayList.add(<span class="number">10</span>);</div><div class="line">	arrayList.add(<span class="number">50</span>);</div><div class="line">	arrayList.add(<span class="string">"你好"</span>);</div><div class="line">	arrayList.add(<span class="number">8</span>);</div><div class="line">	</div><div class="line">	<span class="comment">//增强for进行遍历</span></div><div class="line">	<span class="keyword">for</span> (Object object : arrayList) &#123;</div><div class="line">		System.out.print(object + <span class="string">" "</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="7-2-迭代器"><a href="#7-2-迭代器" class="headerlink" title="7.2 迭代器"></a>7.2 迭代器</h4><p><strong>7.2.1 何为迭代器</strong><br> 迭代器是从集合中取出元素的一种标准方式，我们取出任何集合中的元素都可以按照这个标准来获取，主要遍历Collection集合中的元素。迭代是取出集合中元素的一种方式<br> <strong>7.2.2 原理 </strong><br> 因为多种集合的数据结构不同，所以存储方式不同，因此取出方式也不同。这个时候，我们就把判断和获取功能定义在了一个接口中，将来，遍历哪种集合的时候，只要该集合内部实现这个接口即可(由于集合内部已经实现了该接口，因此直接使用即可，无需我们手动实现 )<br> <strong>7.2.3 使用方式</strong><br> 通过集合对象调用iterator()方法便可获得一个且迭代器对象Iterator，然后再通过hasNext()方法判断是否含有元素，最后通过next()方法获取集合中的元素。（使用示例见上文<strong>7.1</strong>集合遍历中的第三种方法）<br> <strong>7.2.4 常见问题</strong><br>在我们对集合进行遍历的时候，有时候可能会对集合进行删除或者增加元素。但当我们使用Iterator对集合进行遍历的同时进行增删操作时，会出现一个异常，那就是<strong>并发修改异常 ConcurrentModificationException</strong>。 但要是我们硬是要在迭代的时候对元素进行增删操作的时候该肿么办呢？这时就有一个办法解决啦！这个办法就是通过集合对象获取Iterator的子接口ListIterator (例如：ListIterator iterator = arrayList.listIterator(); )<br><strong>7.2.5 Iterator 和 ListIterator的区别</strong><br> 1、Iterator是ListIterator的父接口<br>  2、Iterator是Collection集合的公共的取出容器中元素的方式，对于List，Set都通用。而ListIterator是List集合的特有的取出元素的方式<br> 3、Iterator中只具备hasNext(),next(),remove()方法，可以删除被遍历到的元素ListIterator中具备对遍历到的元素进行增(add)删(remove)改(set)查(next)的方法，可以对元素逆向遍历previouse相对于next,hasPreviouse相对于hasNext(用的很少)<br> <strong>7.2.6 Iterator 和 ListIterator的成员方法</strong><br><img src="https://ooo.0o0.ooo/2017/03/09/58c150b2c75c6.png" alt="iterator.png"></p>
+<h3 id="8-LinkedList"><a href="#8-LinkedList" class="headerlink" title="8. LinkedList"></a>8. LinkedList</h3><p>LinkedList底层实现是链式结构，它的特点是增加删除元素快，查询元素慢。就像人们手牵手连在一起排成一条队列，每个人就可以看做一个元素，当有一个人想进入或者退出队列的时候，只是旁边两人断开手就行了，要是想查询某人处于什么位置，只能从开头或者默认一个一个地查询下去，这样效率就大大下降了。<br><strong>8.1 特有的方法</strong><br><img src="https://ooo.0o0.ooo/2017/03/09/58c1529536653.png" alt="LinkedList.png"><br><strong>8.2 使用示例</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.LinkedList;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedListDemo</span> </span>&#123;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">      LinkedList&lt;String&gt; list = <span class="keyword">new</span> LinkedList&lt;String&gt;();</div><div class="line"></div><div class="line">      list.addFirst(<span class="string">"java01"</span>);</div><div class="line">      list.addFirst(<span class="string">"java02"</span>);</div><div class="line">      list.addFirst(<span class="string">"java03"</span>);</div><div class="line">      list.addFirst(<span class="string">"java04"</span>);</div><div class="line">      </div><div class="line">      System.out.println(list);</div><div class="line">      System.out.println(list.getFirst());</div><div class="line"></div><div class="line">      <span class="keyword">while</span> (!list.isEmpty()) &#123;</div><div class="line">        System.out.println(list.removeLast());</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="9-泛型"><a href="#9-泛型" class="headerlink" title="9. 泛型"></a>9. 泛型</h3><p><strong>9.1 何为泛型</strong><br> 泛型是一种把明确类型的工作放在了创建对象或者调用方法时候才去明确的特殊的类型，泛型就相当于一个预定义类型<br> <strong>9.2 好处</strong></p>
+<ol>
+<li>把系统运行期间的异常提前到了编译期间，提高了安全性</li>
+<li>优化了程序设计，不需要再做强壮了</li>
+</ol>
+<p><strong>9.3 缺点</strong><br>泛型只能传入引用类型，不能传入基本类型，如需要传入基本类型只能传入基本类型对应的包装类类型<br><strong>包装类表如下：</strong><br><img src="https://ooo.0o0.ooo/2017/03/09/58c1547543d58.png" alt="包装类.png"><br><strong>9.4 泛型的使用</strong><br>泛型可以定义在类中，方法中和接口中。下面介绍在创建对象时使用泛型和不使用泛型的区别。<br>不使用泛型时：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个ArrayList集合，没有指定泛型，默认为Object类型</span></div><div class="line">	ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">	arrayList.add(<span class="string">"元素1"</span>);</div><div class="line">	arrayList.add(<span class="string">"元素2"</span>);</div><div class="line">	arrayList.add(<span class="string">"元素3"</span>);</div><div class="line">	</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrayList.size(); i++) &#123;</div><div class="line">		<span class="comment">//由于ArrayList默认为Object类型，因此在不加泛型的时候获取元素需要强转</span></div><div class="line">		String string = (String) arrayList.get(i);</div><div class="line">		System.out.print(string + <span class="string">" "</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>使用泛型：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个ArrayList集合,指定泛型为String类型</span></div><div class="line">	ArrayList&lt;String&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">	arrayList.add(<span class="string">"元素1"</span>);</div><div class="line">	arrayList.add(<span class="string">"元素2"</span>);</div><div class="line">	arrayList.add(<span class="string">"元素3"</span>);</div><div class="line">	<span class="comment">//arrayList.add(2); 这里如果添加非String类型，会报错，因为已经指定泛型,从而将运行期间的异常提前到了编译期间</span></div><div class="line">	</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrayList.size(); i++) &#123;</div><div class="line">		<span class="comment">//由于在创建集合对象时已经给定泛型，因此在此不需要强转</span></div><div class="line">		String string = arrayList.get(i);</div><div class="line">		System.out.print(string + <span class="string">" "</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="10-ArrayList练习"><a href="#10-ArrayList练习" class="headerlink" title="10. ArrayList练习"></a>10. ArrayList练习</h3><p><strong>需求：ArrayList去除集合中字符串的重复值(字符串的内容相同)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Iterator;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 思路：想要对集合中的元素进去重，可以创建一个新的集合，然后再遍历的时候判断新集合是否包含某个元素。如果有了就不添加，否则就添加到新集合里面，最终得到的新集合就是没有重复元素的集合。</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//定义一个ArrayList集合</span></div><div class="line">		ArrayList&lt;String&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">		<span class="comment">//往集合中添加数据</span></div><div class="line">		arrayList.add(<span class="string">"aa"</span>);</div><div class="line">		arrayList.add(<span class="string">"cc"</span>);</div><div class="line">		arrayList.add(<span class="string">"aa"</span>);</div><div class="line">		arrayList.add(<span class="string">"bb"</span>);</div><div class="line">		arrayList.add(<span class="string">"aa"</span>);</div><div class="line">		</div><div class="line">		Iterator&lt;String&gt; iterator = arrayList.iterator();	<span class="comment">//获取迭代器</span></div><div class="line">		ArrayList&lt;String&gt; newList = <span class="keyword">new</span> ArrayList&lt;&gt;();	<span class="comment">//创建一个新的集合</span></div><div class="line">		<span class="keyword">while</span> (iterator.hasNext()) &#123;	</div><div class="line">			String string = iterator.next(); <span class="comment">//获取就集合中的每个元素</span></div><div class="line">			<span class="keyword">if</span> (!newList.contains(string)) &#123; <span class="comment">//如果新集合不包含该元素，就添加到新集合中</span></div><div class="line">				newList.add(string);</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		System.out.println(newList); <span class="comment">//输出结果：[aa, cc, bb]</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>  ————————-       未完待续         ——————————</strong></p>
 
       
 
@@ -209,7 +224,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSe</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
         		</li>
       		
 		</ul>
@@ -265,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://hunterblog.cn/2017/03/02/MySql-install/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://hunterblog.cn/2017/03/09/JavaSe-Collection/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +298,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/09/JavaSe-Collection/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JavaSe之集合（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/27/EclipseForUse/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Eclipse常用快捷键以及常见设置</div>
+    <a href="/2017/03/02/MySql-install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL的安装和配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
