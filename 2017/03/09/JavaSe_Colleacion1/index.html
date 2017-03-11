@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://hunterblog.cn">
   <title>JavaSe之集合(上) | Hunter &#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
+  <meta name="description" content="前言：本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSe之集合(上)">
 <meta property="og:url" content="http://hunterblog.cn/2017/03/09/JavaSe_Colleacion1/index.html">
 <meta property="og:site_name" content="Hunter ' blog">
-<meta property="og:description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
+<meta property="og:description" content="前言：本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c13899522b7.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/09/58c139ce6fc1e.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c394a876a0d.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c398cfaa1ad.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c39a9962361.png">
-<meta property="og:updated_time" content="2017-03-11T07:42:53.968Z">
+<meta property="og:updated_time" content="2017-03-11T07:52:11.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSe之集合(上)">
-<meta name="twitter:description" content="1. 集合概述由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。">
+<meta name="twitter:description" content="前言：本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法">
 <meta name="twitter:image" content="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png">
   
     <link rel="alternative" href="/atom.xml" title="Hunter &#39; blog" type="application/atom+xml">
@@ -175,10 +175,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-集合概述"><a href="#1-集合概述" class="headerlink" title="1. 集合概述"></a>1. 集合概述</h3><p>由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。<br><a id="more"></a></p>
-<blockquote>
+        <blockquote>
 <p><strong>前言：</strong>本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法</p>
 </blockquote>
+<a id="more"></a>
+<h3 id="1-集合概述"><a href="#1-集合概述" class="headerlink" title="1. 集合概述"></a>1. 集合概述</h3><p>由于我们开发过程中，难以避免不去操作数据，操作对象就有可能对数据进行存储，存储数据的方式多种多样，之前我们都是将数据存储在数组中，但数组的特点是长度固定不可改变的，这样就不适合用于存储变化(个数的变化)的数据。因此，Java提供一种容器用于存储数据，这个容器就叫做集合。</p>
 <h3 id="2-集合和数组的区别"><a href="#2-集合和数组的区别" class="headerlink" title="2. 集合和数组的区别"></a>2. 集合和数组的区别</h3><p><strong>数组：</strong></p>
 <ol>
 <li>长度固定</li>
@@ -435,7 +436,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,7 +444,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
               </li>
             
             <div class="clearfix"></div>
