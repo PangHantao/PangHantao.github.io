@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c394a876a0d.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c398cfaa1ad.png">
 <meta property="og:image" content="https://ooo.0o0.ooo/2017/03/11/58c39a9962361.png">
-<meta property="og:updated_time" content="2017-03-11T07:52:11.939Z">
+<meta property="og:updated_time" content="2017-03-13T13:11:07.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSe之集合(上)">
 <meta name="twitter:description" content="前言：本文主要介绍Collection根接口(也被成为单列集合)下常用集合的特点和使用方法">
@@ -194,7 +194,7 @@
 </ol>
 <h3 id="3-集合的体系："><a href="#3-集合的体系：" class="headerlink" title="3. 集合的体系："></a>3. 集合的体系：</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c134b0da65f.png" alt="Colleation.png"></p>
 <h3 id="4-下面看一下各成员特点"><a href="#4-下面看一下各成员特点" class="headerlink" title="4.下面看一下各成员特点"></a>4.下面看一下各成员特点</h3><p><strong>|- -  List：</strong>有序(序指的是存和取得顺序一致，怎么样存就怎么样取)，元素可以重复<br><strong>|- - - - - - - ArrayList：</strong>底层数据结构是数组，查询快，增删慢，<strong>线程不安全，效率高</strong><br><strong>|- - - - - - - Vector：</strong>底层数据结构是数组，查询快，增删慢，<strong>线程安全，效率低</strong><br><strong>|- - - - - - - LinkedList：</strong>底层数据结构是链表，查询慢，增删快，<strong>线程不安全，效率高</strong></p>
-<p><strong>|- -  Set：</strong>无序，元素不可以重复<br><strong>|- - - - - - - HashSet：</strong>底层数据结构是哈希表，<strong>县城不安全，效率高</strong><br><strong>|- - - - - - - TreeSet：</strong>底层数据结构是二叉树，<strong>线程不安全，效率高</strong></p>
+<p><strong>|- -  Set：</strong>无序，元素不可以重复<br><strong>|- - - - - - - HashSet：</strong>底层数据结构是哈希表，<strong>线程不安全，效率高</strong><br><strong>|- - - - - - - TreeSet：</strong>底层数据结构是二叉树，<strong>线程不安全，效率高</strong></p>
 <h3 id="5-Collection接口中的常用方法"><a href="#5-Collection接口中的常用方法" class="headerlink" title="5. Collection接口中的常用方法"></a>5. Collection接口中的常用方法</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c13899522b7.png" alt="Collection方法.png"><br><strong>注：Collection是一个根接口，继承它的子类或者子接口都能使用它的方法</strong></p>
 <h3 id="6-List集合特有的方法"><a href="#6-List集合特有的方法" class="headerlink" title="6. List集合特有的方法"></a>6. List集合特有的方法</h3><p><img src="https://ooo.0o0.ooo/2017/03/09/58c139ce6fc1e.png" alt="List方法.png"></p>
 <h3 id="7-ArrayList"><a href="#7-ArrayList" class="headerlink" title="7. ArrayList"></a>7. ArrayList</h3><p>ArrayList是List接口下的一个实现类之一，也是最常用的一个集合，由于它的底层是数组结构实现的，因此可以看成是一个长度可变的数组，下面介绍关于ArrayList的常见使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//定义一个ArrayList集合</span></div><div class="line">		ArrayList arrayList = <span class="keyword">new</span> ArrayList();</div><div class="line">		</div><div class="line">		arrayList.add(<span class="string">"你好"</span>); <span class="comment">//添加元素</span></div><div class="line">		arrayList.add(<span class="number">20</span>);</div><div class="line">		arrayList.add(<span class="number">20</span>); <span class="comment">//添加了重复元素</span></div><div class="line">		arrayList.set(<span class="number">0</span>, <span class="string">"hello"</span>); <span class="comment">//修改了索引为0的元素</span></div><div class="line">		<span class="keyword">int</span> size = arrayList.size(); <span class="comment">//获取集合的大小</span></div><div class="line">		</div><div class="line">		System.out.println(<span class="string">"集合的大小为："</span>+size); <span class="comment">//输出：集合的大小为：3</span></div><div class="line">		System.out.println(arrayList.get(<span class="number">2</span>));	<span class="comment">//输出：20</span></div><div class="line">		System.out.println(arrayList); <span class="comment">//输出：[hello, 20, 20]</span></div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -436,11 +436,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaSe</a>
+                <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
               </li>
              
               <li class="article-tag-list-item">
