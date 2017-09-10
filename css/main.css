@@ -1,12 +1,3 @@
-.header {
-  width: 80%;
-}
-.container .main-inner {
-  width: 80%;
-}
-.content-wrap {
-  width: calc(100% - 260px);
-}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1998,7 +1989,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #05c4bb;
+  background: #eb8bff;
 }
 .links-of-blogroll {
   font-size: 13px;
