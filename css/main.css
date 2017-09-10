@@ -1998,7 +1998,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5cffd0;
+  background: #c72182;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3046,11 +3046,11 @@ img:hover {
   padding-left: 0;
   padding-right: 260px;
 }
-header {
-  width: 90%;
+.header {
+  width: 80%;
 }
 .container .main-inner {
-  width: 90%;
+  width: 80%;
 }
 .content-wrap {
   width: calc(100% - 260px);
