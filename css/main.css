@@ -1986,7 +1986,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff7ff;
+  background: #26dfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3142,7 +3142,7 @@ img:hover {
 }
 .sidebar-inner {
   box-sizing: border-box;
-  width: 240px;
+  width: 280px;
   color: #555;
   background: #fff;
   box-shadow: initial;
