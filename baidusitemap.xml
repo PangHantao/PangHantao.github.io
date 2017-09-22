@@ -4,8 +4,8 @@
 
     
   <url>
-    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflectChangeAttribute/</loc>
-    <lastmod>2017-09-22T16:32:33.752Z</lastmod>
+    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflexChangeAttribute/</loc>
+    <lastmod>2017-09-22T16:45:03.576Z</lastmod>
     <data>
         <display>
         <title>(转)通过反射动态修改注解的某个属性</title>
@@ -13,12 +13,12 @@
         
         <tag>Java</tag>
          
-        <tag>反射</tag>
+        <tag>Reflex</tag>
          
          
            
              
-              <breadCrumb title="反射, Java" url="http://hunterblog.cn/categories/%E5%8F%8D%E5%B0%84-Java/"/>
+              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
           
         </display>
     </data>
