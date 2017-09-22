@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflexChangeAttribute/</loc>
+    <lastmod>2017-09-22T17:27:58.424Z</lastmod>
+    <data>
+        <display>
+        <title>(转)通过反射动态修改注解的某个属性(一)</title>
+        <pubTime>2017-09-19T15:36:47.000Z</pubTime>
+        
+        <tag>JavaBase</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hunterblog.cn/2017/03/20/MySQL-USE1/</loc>
     <lastmod>2017-09-22T17:14:31.846Z</lastmod>
     <data>
@@ -142,28 +164,6 @@
         <tag>Eclipse</tag>
          
         <tag>IDE</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflexChangeAttribute/</loc>
-    <lastmod>2017-09-22T17:11:43.120Z</lastmod>
-    <data>
-        <display>
-        <title>(转)通过反射动态修改注解的某个属性(一)</title>
-        <pubTime>2017-09-19T15:36:47.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Reflex</tag>
          
          
            
