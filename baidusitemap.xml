@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://hunterblog.cn/Z_MySQLForHelpL01/</loc>
-    <lastmod>2017-09-23T07:40:54.537Z</lastmod>
+    <lastmod>2017-09-23T07:42:35.197Z</lastmod>
     <data>
         <display>
         <title>(转)做个数据库帮助库雏形(一)</title>
@@ -24,16 +24,16 @@
 
     
   <url>
-    <loc>http://hunterblog.cn/Z_Algorithm_phoneNumType/</loc>
-    <lastmod>2017-09-23T07:40:47.116Z</lastmod>
+    <loc>http://hunterblog.cn/Z_JavaReflexChangeAttribute/</loc>
+    <lastmod>2017-09-23T07:42:30.101Z</lastmod>
     <data>
         <display>
-        <title>(转)电话号码分身(小米2017 秋招真题)</title>
-        <pubTime>2017-09-22T15:36:47.000Z</pubTime>
+        <title>(转)通过反射动态修改注解的某个属性</title>
+        <pubTime>2017-09-19T15:36:47.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>Java</tag>
          
-        <tag>算法</tag>
+        <tag>反射</tag>
          
          
            
@@ -46,16 +46,16 @@
 
     
   <url>
-    <loc>http://hunterblog.cn/Z_JavaReflexChangeAttribute/</loc>
-    <lastmod>2017-09-23T07:40:38.231Z</lastmod>
+    <loc>http://hunterblog.cn/Z_Algorithm_phoneNumType/</loc>
+    <lastmod>2017-09-23T07:42:25.281Z</lastmod>
     <data>
         <display>
-        <title>(转)通过反射动态修改注解的某个属性</title>
-        <pubTime>2017-09-19T15:36:47.000Z</pubTime>
+        <title>(转)电话号码分身(小米2017 秋招真题)</title>
+        <pubTime>2017-09-22T15:36:47.000Z</pubTime>
         
-        <tag>Java</tag>
+        <tag>JavaScript</tag>
          
-        <tag>反射</tag>
+        <tag>算法</tag>
          
          
            
