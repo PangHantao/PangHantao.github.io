@@ -1988,7 +1988,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0920ff;
+  background: #7fffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2763,7 +2763,7 @@ img:hover {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2812,8 +2812,18 @@ img:hover {
 .main:after {
   clear: both;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .main {
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .main {
+    padding-bottom: 100px;
+  }
+}
 .container .main-inner {
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2829,7 +2839,7 @@ img:hover {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 700px;
+  width: calc(100% - 260px);
   background: #fff;
   min-height: 700px;
   box-shadow: initial;
@@ -2878,15 +2888,13 @@ img:hover {
 @media (min-width: 768px) and (max-width: 991px) {
   .footer-inner {
     width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
   }
 }
 @media (max-width: 767px) {
   .footer-inner {
     width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
   }
 }
 .sidebar-position-right .header-inner {
@@ -2901,15 +2909,6 @@ img:hover {
 .sidebar-position-right .footer-inner {
   padding-left: 0;
   padding-right: 260px;
-}
-.header {
-  width: 80%;
-}
-.container .main-inner {
-  width: 80%;
-}
-.content-wrap {
-  width: calc(100% - 260px);
 }
 .site-brand-wrapper {
   position: relative;
@@ -3142,15 +3141,4 @@ img:hover {
   .post-body {
     text-align: justify;
   }
-}
-body {
-  background: url("/images/background.jpg");
-  background-attachment: fixed;
-}
-.post {
-  margin-top: 10px;
-  margin-bottom: 40px;
-  padding: 15px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.3);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.3);
 }
