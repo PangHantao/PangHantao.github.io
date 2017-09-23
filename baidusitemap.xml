@@ -4,16 +4,82 @@
 
     
   <url>
-    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflexChangeAttribute/</loc>
-    <lastmod>2017-09-22T17:38:20.247Z</lastmod>
+    <loc>http://hunterblog.cn/2017/09/22/Z_suanfa_phoneNumType/</loc>
+    <lastmod>2017-09-23T04:08:43.064Z</lastmod>
     <data>
         <display>
-        <title>(转)通过反射动态修改注解的某个属性(一)</title>
+        <title>(转)电话号码分身(小米2017 秋招真题)</title>
+        <pubTime>2017-09-22T15:36:47.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hunterblog.cn/2017/09/22/Z_MySQLForHelpL01/</loc>
+    <lastmod>2017-09-23T03:20:07.765Z</lastmod>
+    <data>
+        <display>
+        <title>(转)做个数据库帮助库雏形(一)</title>
+        <pubTime>2017-09-22T15:36:47.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>数据库</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hunterblog.cn/2017/09/19/Z_JavaReflexChangeAttribute/</loc>
+    <lastmod>2017-09-23T03:09:07.915Z</lastmod>
+    <data>
+        <display>
+        <title>(转)通过反射动态修改注解的某个属性</title>
         <pubTime>2017-09-19T15:36:47.000Z</pubTime>
         
         <tag>Java</tag>
          
         <tag>Reflex</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hunterblog.cn/2017/02/27/EclipseForUse/</loc>
+    <lastmod>2017-09-23T02:45:41.515Z</lastmod>
+    <data>
+        <display>
+        <title>Eclipse常用快捷键以及设置</title>
+        <pubTime>2017-02-27T11:44:32.000Z</pubTime>
+        
+        <tag>Eclipse</tag>
+         
+        <tag>IDE</tag>
          
          
            
@@ -142,28 +208,6 @@
         <tag>JavaBase</tag>
          
         <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://hunterblog.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hunterblog.cn/2017/02/27/EclipseForUse/</loc>
-    <lastmod>2017-09-22T17:12:16.576Z</lastmod>
-    <data>
-        <display>
-        <title>Eclipse常用快捷键以及设置</title>
-        <pubTime>2017-02-27T11:44:32.000Z</pubTime>
-        
-        <tag>Eclipse</tag>
-         
-        <tag>IDE</tag>
          
          
            
