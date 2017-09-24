@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://hunterblog.cn/Z_Algorithm_phoneNumType/</loc>
-    <lastmod>2017-09-24T10:48:03.127Z</lastmod>
+    <lastmod>2017-09-24T10:49:37.657Z</lastmod>
     <data>
         <display>
         <title>(转)电话号码分身(小米2017 秋招真题)</title>
@@ -18,7 +18,10 @@
          
            
              
-              <breadCrumb title="编程,面试" url="http://hunterblog.cn/categories/%E7%BC%96%E7%A8%8B-%E9%9D%A2%E8%AF%95/"/>
+              <breadCrumb title="编程" url="http://hunterblog.cn/categories/programming/"/>
+          
+             
+              <breadCrumb title="面试" url="http://hunterblog.cn/categories/programming/interview/"/>
           
         </display>
     </data>
