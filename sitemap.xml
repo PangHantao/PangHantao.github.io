@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hunterblog.cn/Z_Algorithm_phoneNumType/</loc>
+    
+    <lastmod>2017-09-24T10:48:03.127Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hunterblog.cn/WPF_Record/</loc>
     
-    <lastmod>2017-09-24T10:40:22.360Z</lastmod>
+    <lastmod>2017-09-24T10:43:02.189Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://hunterblog.cn/Z_JavaReflexChangeAttribute/</loc>
     
     <lastmod>2017-09-23T07:42:30.101Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hunterblog.cn/Z_Algorithm_phoneNumType/</loc>
-    
-    <lastmod>2017-09-23T07:42:25.281Z</lastmod>
     
   </url>
   
