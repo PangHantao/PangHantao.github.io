@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hunterblog.cn/Andrind%E4%B9%8BAnimation%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2018-04-07T21:12:34.622Z</lastmod>
+    <data>
+        <display>
+        <title>Andrind之Animation详解</title>
+        <pubTime>2017-10-24T08:53:47.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://hunterblog.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hunterblog.cn/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-C#%E8%B0%83%E7%94%A8Java%E4%BB%A3%E7%A0%81(%E7%AE%80%E5%8D%95%E7%AF%87)/</loc>
     <lastmod>2018-04-07T20:52:16.983Z</lastmod>
     <data>
@@ -34,26 +54,6 @@
         <pubTime>2018-03-26T16:00:00.000Z</pubTime>
         
         <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://hunterblog.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hunterblog.cn/Android_Animation/</loc>
-    <lastmod>2017-10-24T18:51:33.309Z</lastmod>
-    <data>
-        <display>
-        <title>Andrind之Animation详解</title>
-        <pubTime>2017-10-24T08:53:47.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            

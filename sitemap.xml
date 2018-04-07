@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hunterblog.cn/Andrind%E4%B9%8BAnimation%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-04-07T21:12:34.622Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hunterblog.cn/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B-C#%E8%B0%83%E7%94%A8Java%E4%BB%A3%E7%A0%81(%E7%AE%80%E5%8D%95%E7%AF%87)/</loc>
     
     <lastmod>2018-04-07T20:52:16.983Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://hunterblog.cn/Java_Algorithm01/</loc>
     
     <lastmod>2018-03-27T19:12:51.097Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hunterblog.cn/Android_Animation/</loc>
-    
-    <lastmod>2017-10-24T18:51:33.309Z</lastmod>
     
   </url>
   
