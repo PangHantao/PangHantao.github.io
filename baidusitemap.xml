@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://hunterblog.cn/C#4Java_simple/</loc>
+    <lastmod>2018-04-07T20:36:50.251Z</lastmod>
+    <data>
+        <display>
+        <title>��ϱ��-C#����Java����(��ƪ)</title>
+        <pubTime>2018-04-07T16:00:00.000Z</pubTime>
+        
+        <tag>Java C# WPF ��ϱ��</tag>
+         
+         
+           
+             
+              <breadCrumb title="���" url="http://hunterblog.cn/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hunterblog.cn/Java_Algorithm01/</loc>
     <lastmod>2018-03-27T19:12:51.097Z</lastmod>
     <data>
@@ -71,9 +91,9 @@
         <title>(转)电话号码分身(小米2017 秋招真题)</title>
         <pubTime>2017-09-22T15:36:47.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>算法</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
