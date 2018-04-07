@@ -95,12 +95,12 @@
 
 
 
-<meta name="description" content="ǰ�����⼸���ڴ�������Ե��õ�ʱ�����˲��ٿӣ�Ϊ���ø���Ŀ����߸����ٸ�Ч�ؽ�����⣬д�����¼�¼һ�£��ʹ�ҷ���">
+<meta name="description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="��ϱ��-C#����Java����(��ƪ)">
+<meta property="og:title" content="混合编程-C#调用Java代码(简单篇)">
 <meta property="og:url" content="http://hunterblog.cn/C#4Java_simple/index.html">
 <meta property="og:site_name" content="Hunter">
-<meta property="og:description" content="ǰ�����⼸���ڴ�������Ե��õ�ʱ�����˲��ٿӣ�Ϊ���ø���Ŀ����߸����ٸ�Ч�ؽ�����⣬д�����¼�¼һ�£��ʹ�ҷ���">
+<meta property="og:description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4nb03270j20gj0bjwgv.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4o93rs0qj20dh03wt8j.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4obsa02nj20sj0co3yw.jpg">
@@ -118,10 +118,10 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpd9ecxj20fr0cv74g.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpnfw1jj20lp0ez749.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qywklcwj20e409bjr9.jpg">
-<meta property="og:updated_time" content="2018-04-07T20:46:09.437Z">
+<meta property="og:updated_time" content="2018-04-07T20:48:39.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="��ϱ��-C#����Java����(��ƪ)">
-<meta name="twitter:description" content="ǰ�����⼸���ڴ�������Ե��õ�ʱ�����˲��ٿӣ�Ϊ���ø���Ŀ����߸����ٸ�Ч�ؽ�����⣬д�����¼�¼һ�£��ʹ�ҷ���">
+<meta name="twitter:title" content="混合编程-C#调用Java代码(简单篇)">
+<meta name="twitter:description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4nb03270j20gj0bjwgv.jpg">
 
 
@@ -158,7 +158,7 @@
 
 
 
-  <title>��ϱ��-C#����Java����(��ƪ) | Hunter</title>
+  <title>混合编程-C#调用Java代码(简单篇) | Hunter</title>
   
 
 
@@ -336,7 +336,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">��ϱ��-C#����Java����(��ƪ)</h2>
+          <h2 class="post-title" itemprop="name headline">混合编程-C#调用Java代码(简单篇)</h2>
         
 
         <div class="post-meta">
@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/���/" itemprop="url" rel="index">
-                    <span itemprop="name">���</span>
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -388,7 +388,7 @@
 
           
           
-             <span id="/C#4Java_simple/" class="leancloud_visitors" data-flag-title="��ϱ��-C#����Java����(��ƪ)">
+             <span id="/C#4Java_simple/" class="leancloud_visitors" data-flag-title="混合编程-C#调用Java代码(简单篇)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,83 +420,83 @@
       
 
       
-        <p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4nb03270j20gj0bjwgv.jpg" alt="C#����Java"></p>
+        <p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4nb03270j20gj0bjwgv.jpg" alt="C#调用Java"></p>
 <blockquote>
-<p><strong>ǰ��</strong>���⼸���ڴ�������Ե��õ�ʱ�����˲��ٿӣ�Ϊ���ø���Ŀ����߸����ٸ�Ч�ؽ�����⣬д�����¼�¼һ�£��ʹ�ҷ���</p>
+<p><strong>前言</strong>：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！</p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h3 id="��Ϊ��ϱ��"><a href="#��Ϊ��ϱ��" class="headerlink" title="��Ϊ��ϱ��"></a>��Ϊ��ϱ��</h3><p><code>��ϱ��</code>ָ����ʹ�����ֻ��������ϵĳ����������������Ӧ�ó���Ĺ��̡� (���԰ٶȰٿ�)</p>
-<p><code>����</code>���ܹ���ϸ�������֮������ƣ�������һ��ǿ����ϵͳ������Java��C++��JAVA�򵥣�����Ч�ʺܸߣ���ȫ��������ʺ���Ӧ�ó���C++���ӣ�����Ч�ʸߣ����Է����룬�ʺ����ײ㡣AndroidӦ�ÿ���ʱ����JavaдӦ�ò㣬����Ч�ʸߣ��ײ�ؼ��㷨�ɿ���ʹ��C++��ִ��Ч�ʸߣ�Ҳ�����ױ������룬�����Ը��á�</p>
-<p><code>ȱ��</code>����ϱ�̴�����ȱ�ݾ�����Ա�ĵ�������Ҫÿ�����Զ���һ��ר�Ҽ�����ܹ��Ը����Բ�����������֢���п��ٵ��жϴ�������ÿ������Ҫ��һ��ר�Ҽ�����֮�⣬������һ������������ͳ�������֮��Ľ������⣬Э����������֮������ݽ��������⡣</p>
+<h3 id="何为混合编程"><a href="#何为混合编程" class="headerlink" title="何为混合编程"></a>何为混合编程</h3><p><code>混合编程</code>指的是使用两种或两种以上的程序设计语言来开发应用程序的过程。 (来自百度百科)</p>
+<p><code>优势</code>：能够结合各种语言之间的优势，来开发一个强劲的系统。比如Java和C++：JAVA简单，开发效率很高，完全面向对象，适合做应用程序，C++复杂，运行效率高，难以反编译，适合做底层。Android应用开发时，用Java写应用层，开发效率高，底层关键算法可考虑使用C++，执行效率高，也不容易被反编译，保密性更好。</p>
+<p><code>缺陷</code>：混合编程带来的缺陷就是人员的调动，需要每个语言都有一个专家级人物，能够对该语言产生的疑难杂症进行快速地判断处理，除了每个语言要有一个专家级人物之外，还有有一个主力，负责统筹各语言之间的交互问题，协调处理语言之间的数据交互等问题。</p>
 <hr>
-<h3 id="���߽���-IKVM"><a href="#���߽���-IKVM" class="headerlink" title="���߽��� - IKVM"></a>���߽��� - IKVM</h3><p>����������C#����JavaΪ����C#����Java������Ҫ�õ�һ�����ߣ��Ǿ���<strong>IKVM</strong>���ù��ߵ����þ���<code>��Jar��ת����DLL�ļ�</code></p>
-<p><strong>IKVM���ܣ�</strong></p>
+<h3 id="工具介绍-IKVM"><a href="#工具介绍-IKVM" class="headerlink" title="工具介绍 - IKVM"></a>工具介绍 - IKVM</h3><p>这里我们以C#调用Java为例，C#调用Java代码需要用到一个工具，那就是<strong>IKVM</strong>，该工具的作用就是<code>将Jar包转换成DLL文件</code></p>
+<p><strong>IKVM介绍：</strong></p>
 <ul>
-<li><code>��.NET��ʵ�ֵ�Java�����</code></li>
-<li><code>Java����.NETʵ��</code></li>
-<li><p><code>֧��Java��.NET�������ԵĹ���</code></p>
-<p><code>������</code><a href="https://www.ikvm.net/" target="_blank" rel="external">https://www.ikvm.net/</a></p>
+<li><code>在.NET中实现的Java虚拟机</code></li>
+<li><code>Java类库的.NET实现</code></li>
+<li><p><code>支持Java和.NET互操作性的工具</code></p>
+<p><code>官网：</code><a href="https://www.ikvm.net/" target="_blank" rel="external">https://www.ikvm.net/</a></p>
 </li>
 </ul>
 <hr>
-<h3 id="��������"><a href="#��������" class="headerlink" title="��������"></a>��������</h3><h4 id="1-�ж��Ƿ�װIKVM"><a href="#1-�ж��Ƿ�װIKVM" class="headerlink" title="1.�ж��Ƿ�װIKVM"></a>1.�ж��Ƿ�װIKVM</h4><ul>
-<li><strong>���Ի�����</strong> ��<code>Win+R</code>��Ȼ������<code>cmd</code>�������У������������������<code>IKVM</code>�������ʾ<code>&#39;ikvm&#39; �����ڲ����ⲿ���Ҳ���ǿ����еĳ���
-���������ļ���</code>��˵��δ��װ�������ڶ���<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4o93rs0qj20dh03wt8j.jpg" alt=""></li>
-<li><strong>���ع��ߣ�</strong> ����������ҵ��������ӣ�����������������<code>IKVM 7</code>�İ汾����������Ϊ��<a href="https://sourceforge.net/projects/ikvm/files/" target="_blank" rel="external">https://sourceforge.net/projects/ikvm/files/</a> �� ������ͼ��ʾ���棬���<code>��ɫ����İ�ť</code>�������أ�<code>�ȴ�����</code>�ͻ��Զ������ˡ�<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4obsa02nj20sj0co3yw.jpg" alt=""></li>
-<li><strong>���û���</strong> ������������<code>���û�������</code>�ˣ�����˵�ҽ�ѹ����D�̣���ô������ӵ�<code>ϵͳ����������Path�£����һ��·�����ǣ�D:\ikvm-7.2.4630.5\bin</code></li>
-<li><strong>������֤��</strong> ��<code>�����</code>������<code>IKVM</code>�����������ͼ��˵���������óɹ���������ǳ�����<code>����һ</code>��ͼʾ��˵���������ò��ɹ���<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4oql62n2j20jx0gzaaa.jpg" alt=""></li>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="1-判断是否安装IKVM"><a href="#1-判断是否安装IKVM" class="headerlink" title="1.判断是否安装IKVM"></a>1.判断是否安装IKVM</h4><ul>
+<li><strong>测试环境：</strong> 按<code>Win+R</code>，然后输入<code>cmd</code>打开命令行，最后在命令行中输入<code>IKVM</code>，如果显示<code>&#39;ikvm&#39; 不是内部或外部命令，也不是可运行的程序
+或批处理文件。</code>，说明未安装，继续第二步<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4o93rs0qj20dh03wt8j.jpg" alt=""></li>
+<li><strong>下载工具：</strong> 进入官网，找到下载链接，官网的下载链接是<code>IKVM 7</code>的版本，下载链接为：<a href="https://sourceforge.net/projects/ikvm/files/" target="_blank" rel="external">https://sourceforge.net/projects/ikvm/files/</a> ， 打开如下图所示界面，点击<code>红色方框的按钮</code>进行下载，<code>等待几秒</code>就会自动下载了。<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4obsa02nj20sj0co3yw.jpg" alt=""></li>
+<li><strong>配置环境</strong> 下载下来就是<code>配置环境变量</code>了，比如说我解压到了D盘，那么我在添加到<code>系统环境变量的Path下，添加一个路径就是：D:\ikvm-7.2.4630.5\bin</code></li>
+<li><strong>环境验证：</strong> 在<code>命令窗口</code>中输入<code>IKVM</code>，如果出现下图，说明环境配置成功！如果还是出现如<code>步骤一</code>的图示，说明环境配置不成功！<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4oql62n2j20jx0gzaaa.jpg" alt=""></li>
 </ul>
 <hr>
-<h3 id="ʵ�ֹ���"><a href="#ʵ�ֹ���" class="headerlink" title="ʵ�ֹ���"></a>ʵ�ֹ���</h3><h4 id="1������Java����"><a href="#1������Java����" class="headerlink" title="1������Java����"></a>1������Java����</h4><p> <strong>ע�����</strong></p>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="1、创建Java工程"><a href="#1、创建Java工程" class="headerlink" title="1、创建Java工程"></a>1、创建Java工程</h4><p> <strong>注意事项：</strong></p>
 <ul>
-<li>�ù��̵�JRE���л�����<code>1.7</code>��</li>
-<li>��Ҫ�����õķ���(��<code>getString()</code>)���ܱ�<code>private</code>��<code>static</code>����</li>
-<li><code>����������Ĭ�ϵİ���(��ȱʡ�İ���)</code>��������C#�н��޷�ͨ�������ռ��ҵ�����</li>
+<li>该工程的JRE运行环境是<code>1.7</code>的</li>
+<li>需要被调用的方法(即<code>getString()</code>)不能被<code>private</code>和<code>static</code>修饰</li>
+<li><code>包名不能是默认的包名(即缺省的包名)</code>，否则在C#中将无法通过命名空间找到该类</li>
 </ul>
-<p><code>���̴������£�</code><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">package com.test;</div><div class="line"></div><div class="line">public class JarClass &#123;</div><div class="line">	/**</div><div class="line">	 * ����һ�����зǾ�̬�ķ���</div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public String getString() &#123;</div><div class="line">		return &quot;Hello World!&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="2�������̴����Jar��"><a href="#2�������̴����Jar��" class="headerlink" title="2�������̴����Jar��"></a>2�������̴����Jar��</h4><ul>
-<li>��Java��Ŀ�е����<code>�Ҽ�</code> -&gt; <code>Export</code> -&gt; <code>Java</code> -&gt; <code>Jar file</code> -&gt; <code>Next</code> ��������ͼ��ʾ�Ļ��棬<code>ͼ�е�3</code>����ѡ��Ҫ����Jar����·�������֮��һ·���<code>Next</code>���ɡ�<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4phkj1q1j20f40izmxg.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pj2dfcij20f30it74f.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pjk1psqj20f20iv0sz.jpg" alt=""></li>
-<li>���������Щ����֮�󣬻�õ�һ��Jar�������Jar����������ת����DLL�ļ��ġ�</li>
+<p><code>工程代码如下：</code><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">package com.test;</div><div class="line"></div><div class="line">public class JarClass &#123;</div><div class="line">	/**</div><div class="line">	 * 创建一个公有非静态的方法</div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public String getString() &#123;</div><div class="line">		return &quot;Hello World!&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="2、将工程打包成Jar包"><a href="#2、将工程打包成Jar包" class="headerlink" title="2、将工程打包成Jar包"></a>2、将工程打包成Jar包</h4><ul>
+<li>在Java项目中点击：<code>右键</code> -&gt; <code>Export</code> -&gt; <code>Java</code> -&gt; <code>Jar file</code> -&gt; <code>Next</code> ，出现下图所示的画面，<code>图中的3</code>就是选择要导出Jar包的路径，完成之后一路点击<code>Next</code>即可。<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4phkj1q1j20f40izmxg.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pj2dfcij20f30it74f.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pjk1psqj20f20iv0sz.jpg" alt=""></li>
+<li>完成上面这些步骤之后，会得到一个Jar包。这个Jar包就是用来转换成DLL文件的。</li>
 </ul>
-<h4 id="3����Jar�l�ת����DLL�l�"><a href="#3����Jar�l�ת����DLL�l�" class="headerlink" title="3����Jar�ļ�ת����DLL�ļ�"></a>3����Jar�ļ�ת����DLL�ļ�</h4><ul>
-<li>��������ʹ��IKVM��JAR��ת����DLL�ļ���ת������Ϊ��<code>ikvmc -out:Ҫת����dll�ļ����� ת��Jar����·��</code></li>
-<li>���磺<code>ikvmc -out:JarTest.dll C:\Users\pangh\Desktop\JarTest.jar</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pr33kf7j20r008kmx0.jpg" alt=""></li>
-<li>������ͼ˵��ת���ɹ�����ʱ��JarTest.jar�ļ�ͬһ·���£�����һ��JarTest.dll���ļ����������Ҫ��C#��ʹ�õ����ļ�����<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pt4xnz1j20qz06nq2t.jpg" alt=""></li>
+<h4 id="3、将Jar文件转换成DLL文件"><a href="#3、将Jar文件转换成DLL文件" class="headerlink" title="3、将Jar文件转换成DLL文件"></a>3、将Jar文件转换成DLL文件</h4><ul>
+<li>命令行中使用IKVM将JAR包转换成DLL文件，转换命令为：<code>ikvmc -out:要转换的dll文件名称 转换Jar包的路径</code></li>
+<li>例如：<code>ikvmc -out:JarTest.dll C:\Users\pangh\Desktop\JarTest.jar</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pr33kf7j20r008kmx0.jpg" alt=""></li>
+<li>出现下图说明转换成功，此时在JarTest.jar文件同一路径下，会多出一个JarTest.dll的文件，这个就是要在C#中使用到的文件啦！<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pt4xnz1j20qz06nq2t.jpg" alt=""></li>
 </ul>
-<h4 id="4���½�һ��WPF��L"><a href="#4���½�һ��WPF��L" class="headerlink" title="4���½�һ��WPF��Ŀ"></a>4���½�һ��WPF��Ŀ</h4><p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pxfeql5j20px0fzgm9.jpg" alt=""></p>
+<h4 id="4、新建一个WPF项目"><a href="#4、新建一个WPF项目" class="headerlink" title="4、新建一个WPF项目"></a>4、新建一个WPF项目</h4><p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pxfeql5j20px0fzgm9.jpg" alt=""></p>
 <ul>
-<li>����Ҫ��WPF��ͨ��<code>NuGet��������</code>��װIKVM����������<code>����</code> -&gt; <code>NuGet��������</code> -&gt; <code>������������NuGet ��������</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4ql59dj4j20w40h9mye.jpg" alt=""></li>
-<li>����<code>NuGet��������</code>֮�󣬵����<code>���</code> -&gt;<code>����IKVM</code> -&gt;<code>���IKVM</code> -&gt;<code>�Ҳ�ѡ��ǰ��Ŀ</code> -&gt;<code>ѡ��IKVM�İ汾Ϊ��7.2.4630.5</code> -&gt;<code>��װ</code>  <blockquote>
-<p><code>ע�⣺</code>WPF��Ŀ�ﰲװ��IKVM�İ汾Ҫ�ͽ�JarתDLL��IKVM�汾һ�£���������IKVM�汾��ͻ�����</p>
+<li>首先要在WPF中通过<code>NuGet包管理器</code>安装IKVM插件。点击：<code>工具</code> -&gt; <code>NuGet包管理器</code> -&gt; <code>管理解决方案的NuGet 包管理器</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4ql59dj4j20w40h9mye.jpg" alt=""></li>
+<li>进入<code>NuGet包管理器</code>之后，点击：<code>浏览</code> -&gt;<code>输入IKVM</code> -&gt;<code>点击IKVM</code> -&gt;<code>右侧选择当前项目</code> -&gt;<code>选择IKVM的版本为：7.2.4630.5</code> -&gt;<code>安装</code>  <blockquote>
+<p><code>注意：</code>WPF项目里安装的IKVM的版本要和将Jar转DLL的IKVM版本一致，否则会出现IKVM版本冲突的情况</p>
 <p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qm4p1iej20vs0ix0u5.jpg" alt=""></p>
 </blockquote>
 </li>
-<li>�ȴ�һ�ᣬ��װ��ɺ����̨�����<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qmjhmt4j20ti0bd0su.jpg" alt=""></li>
-<li>��װ���֮��鿴WPF��Ŀ�����ã�����һ�¹���IKVM��DLL�ļ�<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qnjgvksj208z0epweh.jpg" alt=""></li>
+<li>等待一会，安装完成后控制台会输出<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qmjhmt4j20ti0bd0su.jpg" alt=""></li>
+<li>安装完成之后查看WPF项目的引用，会多出一下关于IKVM的DLL文件<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qnjgvksj208z0epweh.jpg" alt=""></li>
 </ul>
-<h4 id="5��ʹ��DLL�l�"><a href="#5��ʹ��DLL�l�" class="headerlink" title="5��ʹ��DLL�ļ�"></a>5��ʹ��DLL�ļ�</h4><ul>
-<li>����Ŀ��ͨ��<code>�������</code>�����ǵ�DLL�ļ���ӵ�������<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpd9ecxj20fr0cv74g.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpnfw1jj20lp0ez749.jpg" alt=""></li>
-<li>����������֮����MainWindow.cs �ļ���ʹ�ø����ǵ�DLL�ļ���ʹ�÷�ʽ��ͨ��<code>using Java����İ�����Ȼ����ͨ�������ҵ���Ӧ���࣬�����ͨ���������Ӧ�ķ���</code>��<strong>��һ���ܹؼ�</strong>��</li>
+<h4 id="5、使用DLL文件"><a href="#5、使用DLL文件" class="headerlink" title="5、使用DLL文件"></a>5、使用DLL文件</h4><ul>
+<li>在项目中通过<code>添加引用</code>把我们的DLL文件添加到引用中<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpd9ecxj20fr0cv74g.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpnfw1jj20lp0ez749.jpg" alt=""></li>
+<li>添加引用完成之后，在MainWindow.cs 文件中使用该我们的DLL文件，使用方式是通过<code>using Java程序的包名，然后再通过包名找到相应的类，最后在通过类调用相应的方法</code>（<strong>这一步很关键</strong>）</li>
 </ul>
-<p><code>cs�ļ���������:</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> System.Windows;</div><div class="line"><span class="keyword">using</span> com.test; <span class="comment">// ��һ���ܹؼ���ֻ��using com.test�����ҵ�Java��Ŀ�е�JarClass��</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">WpfApp1</span></div><div class="line">&#123;</div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line">    <span class="comment"><span class="doctag">///</span> MainWindow.xaml �Ľ����߼�</span></div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainWindow</span> : <span class="title">Window</span></div><div class="line">    &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainWindow</span>(<span class="params"></span>)</span></div><div class="line">        &#123;</div><div class="line">            InitializeComponent();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Button_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></div><div class="line">        &#123;</div><div class="line">            JarClass test = <span class="keyword">new</span> JarClass();</div><div class="line">            <span class="keyword">string</span> t = test.getString();</div><div class="line">            MessageBox.Show(t);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>cs文件代码如下:</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> System.Windows;</div><div class="line"><span class="keyword">using</span> com.test; <span class="comment">// 这一步很关键，只有using com.test才能找到Java项目中的JarClass类</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">WpfApp1</span></div><div class="line">&#123;</div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line">    <span class="comment"><span class="doctag">///</span> MainWindow.xaml 的交互逻辑</span></div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainWindow</span> : <span class="title">Window</span></div><div class="line">    &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainWindow</span>(<span class="params"></span>)</span></div><div class="line">        &#123;</div><div class="line">            InitializeComponent();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Button_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></div><div class="line">        &#123;</div><div class="line">            JarClass test = <span class="keyword">new</span> JarClass();</div><div class="line">            <span class="keyword">string</span> t = test.getString();</div><div class="line">            MessageBox.Show(t);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
-<li><code>���óɹ���ͼƬ</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qywklcwj20e409bjr9.jpg" alt=""></li>
+<li><code>调用成功的图片</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qywklcwj20e409bjr9.jpg" alt=""></li>
 </ul>
 <hr>
-<h3 id="�ؼ�����"><a href="#�ؼ�����" class="headerlink" title="�ؼ�����"></a>�ؼ�����</h3><ul>
-<li>1������Jar��</li>
-<li>2��ʹ��IKVM��Jar��ת����DLL�ļ�</li>
-<li>3����C#��ʹ��DLL�ļ�������Java����</li>
+<h3 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h3><ul>
+<li>1、导出Jar包</li>
+<li>2、使用IKVM将Jar包转换成DLL文件</li>
+<li>3、在C#中使用DLL文件，调用Java代码</li>
 </ul>
 <hr>
-<h3 id="����С��"><a href="#����С��" class="headerlink" title="����С��"></a>����С��</h3><blockquote>
-<p>ͨ�����νӴ���ϱ�̵Ĺ��̣�Ҳ���˲��ٿӣ���ϱ�̸����Ǵ����˶������Ե����ƣ����������϶������Ե�ʱ��Ҳ��Ҫע��<code>�汾����</code>������ѻ�ϱ�����õĺõĻ����ܹ������Ǵ����ܶ�ı�������һƪ���½�����Ҵ���<code>C#��ε���Java����(����ƪ)</code>�� ϣ���ܹ������������developer.</p>
+<h3 id="本文小结"><a href="#本文小结" class="headerlink" title="本文小结"></a>本文小结</h3><blockquote>
+<p>通过初次接触混合编程的过程，也踩了不少坑，混合编程给我们带来了多种语言的优势，我们在整合多种语言的时候也需要注意<code>版本问题</code>，如果把混合编程利用的好的话，能够给我们带来很多的便利。下一篇文章将给大家带来<code>C#如何调用Java代码(复杂篇)</code>。 希望能够帮助到更多的developer.</p>
 </blockquote>
 <hr>
 <blockquote>
-<p><strong>��Ȩ������</strong>����Ϊ����ԭ�����£�ת����ע������<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> �����ߣ�Hunter��лл֧�֡�</p>
+<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> 和作者：Hunter，谢谢支持。</p>
 </blockquote>
 
       
@@ -716,7 +716,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#��Ϊ��ϱ��"><span class="nav-number">1.</span> <span class="nav-text">��Ϊ��ϱ��</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#���߽���-IKVM"><span class="nav-number">2.</span> <span class="nav-text">���߽��� - IKVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��������"><span class="nav-number">3.</span> <span class="nav-text">��������</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-�ж��Ƿ�װIKVM"><span class="nav-number">3.1.</span> <span class="nav-text">1.�ж��Ƿ�װIKVM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ʵ�ֹ���"><span class="nav-number">4.</span> <span class="nav-text">ʵ�ֹ���</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1������Java����"><span class="nav-number">4.1.</span> <span class="nav-text">1������Java����</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2�������̴����Jar��"><span class="nav-number">4.2.</span> <span class="nav-text">2�������̴����Jar��</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3����Jar�l�ת����DLL�l�"><span class="nav-number">4.3.</span> <span class="nav-text">3����Jar�ļ�ת����DLL�ļ�</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4���½�һ��WPF��L"><span class="nav-number">4.4.</span> <span class="nav-text">4���½�һ��WPF��Ŀ</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5��ʹ��DLL�l�"><span class="nav-number">4.5.</span> <span class="nav-text">5��ʹ��DLL�ļ�</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#�ؼ�����"><span class="nav-number">5.</span> <span class="nav-text">�ؼ�����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#����С��"><span class="nav-number">6.</span> <span class="nav-text">����С��</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为混合编程"><span class="nav-number">1.</span> <span class="nav-text">何为混合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具介绍-IKVM"><span class="nav-number">2.</span> <span class="nav-text">工具介绍 - IKVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断是否安装IKVM"><span class="nav-number">3.1.</span> <span class="nav-text">1.判断是否安装IKVM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现过程"><span class="nav-number">4.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建Java工程"><span class="nav-number">4.1.</span> <span class="nav-text">1、创建Java工程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、将工程打包成Jar包"><span class="nav-number">4.2.</span> <span class="nav-text">2、将工程打包成Jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、将Jar文件转换成DLL文件"><span class="nav-number">4.3.</span> <span class="nav-text">3、将Jar文件转换成DLL文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、新建一个WPF项目"><span class="nav-number">4.4.</span> <span class="nav-text">4、新建一个WPF项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、使用DLL文件"><span class="nav-number">4.5.</span> <span class="nav-text">5、使用DLL文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键步骤"><span class="nav-number">5.</span> <span class="nav-text">关键步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文小结"><span class="nav-number">6.</span> <span class="nav-text">本文小结</span></a></li></ol></div>
             
 
           </div>
