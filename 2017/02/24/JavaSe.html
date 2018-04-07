@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java,JavaBase," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言：此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSe之面向对象">
+<meta property="og:url" content="http://hunterblog.cn/2017/02/24/JavaSe.html">
+<meta property="og:site_name" content="Hunter">
+<meta property="og:description" content="前言：此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/28/58b50da26de47.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/28/58b50e3263ee2.png">
+<meta property="og:updated_time" content="2017-09-23T04:20:19.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaSe之面向对象">
+<meta name="twitter:description" content="前言：此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/02/28/58b50da26de47.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"right#\t\t此处修改了 原为left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":5},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hunterblog.cn/2017/02/24/JavaSe.html"/>
+
+
+
+
+
+  <title>JavaSe之面向对象 | Hunter</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right#		此处修改了 原为left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hunter</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">心存敬畏之心，常怀感恩之德</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hunterblog.cn/2017/02/24/JavaSe.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hunter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hunter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaSe之面向对象</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-24T22:26:33+08:00">
+                2017-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/02/24/JavaSe.html" class="leancloud_visitors" data-flag-title="JavaSe之面向对象">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+		 <span>°C</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><strong>前言：</strong>此文主要讲述何为面向对象、面向对象的三大特征、抽象类和接口，但只作简单的阐述，不深入研究</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="何为面向对象"><a href="#何为面向对象" class="headerlink" title="何为面向对象"></a>何为面向对象</h3><p>俗话说万物皆对象，每一个事物都可看作为一个对象，对象就拥有它的属性和功能(也称行为)，比如说一名学生，他的属性就有姓名，年龄，学号，体重，身高……等，功能(行为)有学习，吃饭，睡觉……等。Java中将这些对象抽象为每一个类，然后再对这些类进行一些相应的操作。创建对象的格式是： 类名 对象名 = new 类名(); </p>
+<h3 id="面向对象的三大思想特征：封装，继承，多态"><a href="#面向对象的三大思想特征：封装，继承，多态" class="headerlink" title="面向对象的三大思想特征：封装，继承，多态"></a>面向对象的三大思想特征：封装，继承，多态</h3><h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><h4 id="1-1-定义："><a href="#1-1-定义：" class="headerlink" title="1.1 定义："></a>1.1 定义：</h4><p>指隐藏对象的属性和实现细节，仅对外提供公共的访问方式（换句话说就是将属性私有化，并提供共有的方法访问）</p>
+<h4 id="1-2-private关键字"><a href="#1-2-private关键字" class="headerlink" title="1.2 private关键字"></a>1.2 private关键字</h4><p>可用于修饰成员内容，包括成员变量和成员方法，被他修饰完毕后的内容，在其他类中是不能直接访问的，换句话说就是被private修饰的内容只能在本类中使用</p>
+<h4 id="1-3-getter-setter方法的使用"><a href="#1-3-getter-setter方法的使用" class="headerlink" title="1.3 getter/setter方法的使用"></a>1.3 getter/setter方法的使用</h4><p>因为类的属性被私有化，只能在本类中访问，其他类想要访问就需要提供getter方法和setter方法。但这两个方法时相互独立的，不一定必须出现（get方法和set方法的名字可以随便起，只不过大家通过方法访问私有属性的时候形成了一个默认的规则：设置类的属性值通过setXxx()方法，获取类的属性通过getXxx()方法）。</p>
+<h4 id="1-4-this关键字"><a href="#1-4-this关键字" class="headerlink" title="1.4 this关键字"></a>1.4 this关键字</h4><p>a.this关键字只能代表本类对象<br>b.this关键字代表所属方法的所属对象<br>c.谁调用this，this就代表谁<br>d.this可用于区分成员变量和局部变量同名的情况（例如this.属性名代表的是成员变量）</p>
+<h4 id="1-5-构造方法"><a href="#1-5-构造方法" class="headerlink" title="1.5 构造方法"></a>1.5 构造方法</h4><h5 id="1-5-1-特点："><a href="#1-5-1-特点：" class="headerlink" title="1.5.1    特点："></a>1.5.1    特点：</h5><p>a.方法名必须和类名保持一致<br>b.没有返回值类型并且没有具体的返回值，连void都没有</p>
+<h5 id="1-5-2-作用："><a href="#1-5-2-作用：" class="headerlink" title="1.5.2 作用："></a>1.5.2 作用：</h5><p>给对象的属性进行初始化</p>
+<h5 id="1-5-3-注意事项"><a href="#1-5-3-注意事项" class="headerlink" title="1.5.3 注意事项"></a>1.5.3 注意事项</h5><p>a.如果没有明确给出构造方法，系统会默认给出一个无参的构造方法<br>b.只要给出明确的构造方法，系统将不会提供任何的构造方法<br>c.构造方法的重载体现在参数的不同（包括参数类型、个数以及顺序）</p>
+<h4 id="1-6-给私有属性赋值的方式"><a href="#1-6-给私有属性赋值的方式" class="headerlink" title="1.6 给私有属性赋值的方式"></a>1.6 给私有属性赋值的方式</h4><p>a.通过set方法（推荐使用）<br>b.通过构造方法<br>c.在定义成员变量的时候就赋值<br>例如：private String name = “张三”；<br>d.通过反射中的Fied类中的对象给对象的属性赋值</p>
+<h4 id="1-7构造方法和setter方法的区别"><a href="#1-7构造方法和setter方法的区别" class="headerlink" title="1.7构造方法和setter方法的区别"></a>1.7构造方法和setter方法的区别</h4><p>a.构造方法是在创建对象的时候赋值，只能赋值一次<br>b.setter方法是在创建完对象以后再给对象的属性赋值，能赋值多次</p>
+<p>代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line">一个类的代码分布图：</div><div class="line">    属性 </div><div class="line">    构造方法 </div><div class="line">    成员方法 </div><div class="line">    get方法和set方法</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="comment">/** 姓名 */</span></div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">	<span class="comment">/** 年龄 */</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span> </span>&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>();</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取姓名</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@return</span> name 姓名</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 设置姓名</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@param</span> name</div><div class="line">	 *            姓名</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 获取年龄</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@return</span> age 年龄</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 设置年龄</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@param</span> age</div><div class="line">	 *            年龄</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.age = age;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">测试类</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//通过无参构造创建对象，并给成员变量赋值</span></div><div class="line">		Student zs = <span class="keyword">new</span> Student();</div><div class="line">		zs.setName(<span class="string">"张三"</span>);</div><div class="line">		zs.setAge(<span class="number">13</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//通过有参构造创建对象，并给成员变量赋值</span></div><div class="line">		Student ls = <span class="keyword">new</span> Student(<span class="string">"李四"</span>,<span class="number">14</span>);</div><div class="line">		</div><div class="line">		<span class="comment">//调用对象的方法</span></div><div class="line">		System.out.println(zs.getName()+<span class="string">"----"</span>+zs.getAge());</div><div class="line">		System.out.println(ls.getName()+<span class="string">"----"</span>+ls.getAge());</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="1-8-static关键字"><a href="#1-8-static关键字" class="headerlink" title="1.8 static关键字"></a>1.8 static关键字</h4><h5 id="1-8-1-定义"><a href="#1-8-1-定义" class="headerlink" title="1.8.1 定义"></a>1.8.1 定义</h5><p>static意为静态，可以修饰成员变量和成员方法，被static修饰的成员，可以被该类下的所有对象共享（例如 private static int number = 10; 这个number变量就可以被该类下所有对象使用）</p>
+<h5 id="1-8-2特点"><a href="#1-8-2特点" class="headerlink" title="1.8.2特点"></a>1.8.2特点</h5><p>a.被static修饰的成员随着类的加载而加载， 并且优先于对象而存在（即在内存中加载完该成员才到对象的创建）<br>b.可以通过类名<strong>.</strong>直接调用<br>c.被该类下所有对象共享</p>
+<h5 id="1-8-3注意事项"><a href="#1-8-3注意事项" class="headerlink" title="1.8.3注意事项"></a>1.8.3注意事项</h5><p>a.在静态方法中没有this关键字，因为静态是随着类的加载而加载，而this关键字是对象创建才存在的<br>b.静态方法只能访问静态成员变量和静态的方法（即静态只能访问静态）<br>c.静态内容可以通过创建对象调用，也可以直接通过类名<strong>.</strong>调用。（推荐通过类名点调用）</p>
+<hr>
+<h3 id="2-继承"><a href="#2-继承" class="headerlink" title="2.继承"></a>2.继承</h3><h4 id="2-1由来和定义"><a href="#2-1由来和定义" class="headerlink" title="2.1由来和定义"></a>2.1由来和定义</h4><p>a.在多个类中存在相同的属性和行为时，将这些内容抽取到单个类中，那么多个类无需再定义该属性和行为，只需要继承那单个类即可<br>b.多个类成为子类或派生类，单个类成为超类或者父类又或者基类</p>
+<h4 id="2-2好处和弊端"><a href="#2-2好处和弊端" class="headerlink" title="2.2好处和弊端"></a>2.2好处和弊端</h4><p>a.提高代码的复用性<br>b.使类与类产生关系，是多态的前提<br>c.Java中只支持单继承，不支持多继承，但支持多层继承</p>
+<h4 id="2-3使用场景"><a href="#2-3使用场景" class="headerlink" title="2.3使用场景"></a>2.3使用场景</h4><p>子类是父类的一种，比如猫继承动物，猫就是子类，动物就是父类（注意：不要为了获取某个功能而去继承）</p>
+<h4 id="2-4this和super比较"><a href="#2-4this和super比较" class="headerlink" title="2.4this和super比较"></a>2.4this和super比较</h4><h5 id="2-4-1概念上的区别"><a href="#2-4-1概念上的区别" class="headerlink" title="2.4.1概念上的区别"></a>2.4.1概念上的区别</h5><p>super代表的是父类内存空间标识<br>this代表所在方法所属对象的引用</p>
+<h5 id="2-4-2super使用场景"><a href="#2-4-2super使用场景" class="headerlink" title="2.4.2super使用场景"></a>2.4.2super使用场景</h5><p>a.当子父类中出现同名成员可以用super区分<br>b.子类调用父类的构造方法可以用super<strong>.</strong>方法名调用</p>
+<h5 id="2-4-3注意事项"><a href="#2-4-3注意事项" class="headerlink" title="2.4.3注意事项"></a>2.4.3注意事项</h5><p>a.构造方法中的this()和super()语句必须放在第一行，并且只能取其一<br>b.如果父类中无无参构造，子类只能通过super(参数)调用父类的构造方法，通过this(…)调用本类的构造方法</p>
+<h4 id="2-5重写OverRide和重载OverLoad"><a href="#2-5重写OverRide和重载OverLoad" class="headerlink" title="2.5重写OverRide和重载OverLoad"></a>2.5重写OverRide和重载OverLoad</h4><h5 id="2-5-1重写OverRide"><a href="#2-5-1重写OverRide" class="headerlink" title="2.5.1重写OverRide"></a>2.5.1重写OverRide</h5><p>在子父类关系中，子类中存在与父类中<strong>方法声明</strong>完全一样的方法叫重写（即除了方法体不一样，其他都是一样的，但子类的权限要大于等于父类的）</p>
+<h5 id="2-5-2重载OverLoad"><a href="#2-5-2重载OverLoad" class="headerlink" title="2.5.2重载OverLoad"></a>2.5.2重载OverLoad</h5><p>在一个类中或者在子父类中存在多个同名方法，并且参数列表不同的方法叫重载</p>
+<h5 id="2-5-3注意事项"><a href="#2-5-3注意事项" class="headerlink" title="2.5.3注意事项"></a>2.5.3注意事项</h5><p>a.只有方法才存在重写，变量不存在重写这一说法<br>b.父类中的私有方法不能被覆盖</p>
+<h4 id="2-6final关键字"><a href="#2-6final关键字" class="headerlink" title="2.6final关键字"></a>2.6final关键字</h4><h5 id="2-6-1定义"><a href="#2-6-1定义" class="headerlink" title="2.6.1定义"></a>2.6.1定义</h5><p>很多时候有些方法内容时不能被重写的。而我们知道父类方法声明为public就可以被重写。针对这种情况，我们可以做个标记，告诉别人此类不能被重写<br>final ：最终的意思，可以修饰类，变量以及成员方法</p>
+<h5 id="2-6-2被final修饰的特点"><a href="#2-6-2被final修饰的特点" class="headerlink" title="2.6.2被final修饰的特点"></a>2.6.2被final修饰的特点</h5><p>a.被final修饰的方法不能被重写<br>b.被final修饰的类不能被继承<br>c.被final修饰的变量其实就是常量，必须显示地赋值，并且命名要全部大写，每个单词之间用下划线连接起来</p>
+<h5 id="2-6-3被final修饰的类"><a href="#2-6-3被final修饰的类" class="headerlink" title="2.6.3被final修饰的类"></a>2.6.3被final修饰的类</h5><p>java.lang.reflect.Array</p>
+<pre><code>boolean的包装类java.lang.Boolean
+
+byte的包装类java.lang.Byte
+
+char的包装类java.lang.Character
+
+double的包装类java.lang.Double
+
+float的包装类java.lang.Float
+
+int的包装类java.lang.Integer
+
+long的包装类java.lang.Long
+
+short的包装类java.lang.Short
+
+void的包装类java.lang.Void
+
+String类java.lang.String
+
+System类java.lang.System
+
+Class类java.lang.Class&lt;T&gt;
+
+编译器java.lang.Compiler类
+
+Math类java.lang.Math
+
+两个可变字符序列类java.lang.StringBuffer与java.lang.StringBuilder
+
+Scanner类java.util.Scanner
+
+正则匹配器java.util.regex.Matcher
+
+正则表达式编译形式类java.util.regex.Pattern
+</code></pre><hr>
+<h3 id="3-多态"><a href="#3-多态" class="headerlink" title="3.多态"></a>3.多态</h3><h4 id="3-1多态的定义"><a href="#3-1多态的定义" class="headerlink" title="3.1多态的定义"></a>3.1多态的定义</h4><p>对象在不同时刻表现出来的不同状态</p>
+<h4 id="3-2多态的前提条件"><a href="#3-2多态的前提条件" class="headerlink" title="3.2多态的前提条件"></a>3.2多态的前提条件</h4><p>a.要有继承关系或者实现关系<br>b.要有方法重写或者实现关系<br>c.要有父类引用指向子类对象或者父类接口指向子类对象</p>
+<h4 id="3-3多态的成员特点"><a href="#3-3多态的成员特点" class="headerlink" title="3.3多态的成员特点"></a>3.3多态的成员特点</h4><h5 id="3-3-1成员变量"><a href="#3-3-1成员变量" class="headerlink" title="3.3.1成员变量"></a>3.3.1成员变量</h5><p>编译看等号左边，运行看等号左边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu  = <span class="keyword">new</span> Zi();</div><div class="line">System.out.println(fu.name);<span class="comment">//调用的是父类的name属性</span></div></pre></td></tr></table></figure></p>
+<h5 id="3-3-2成员方法"><a href="#3-3-2成员方法" class="headerlink" title="3.3.2成员方法"></a>3.3.2成员方法</h5><p>编译看等号的左边，运行看等号的右边<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fu fu = <span class="keyword">new</span> Zi();</div><div class="line">fu.show();<span class="comment">//调用的是子类的show()</span></div></pre></td></tr></table></figure></p>
+<p><strong>小结：方法运行看右边</strong></p>
+<h4 id="3-4多态的好处和弊端"><a href="#3-4多态的好处和弊端" class="headerlink" title="3.4多态的好处和弊端"></a>3.4多态的好处和弊端</h4><h5 id="3-4-1弊端"><a href="#3-4-1弊端" class="headerlink" title="3.4.1弊端"></a>3.4.1弊端</h5><p>父类引用不能直接使用子类对象的特有功能，只能通过向下转型（强转）实现</p>
+<h5 id="3-4-2好处"><a href="#3-4-2好处" class="headerlink" title="3.4.2好处"></a>3.4.2好处</h5><p>增强了程序的拓展性和可维护性，大大减少了维护成本</p>
+<hr>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><h4 id="1-由来"><a href="#1-由来" class="headerlink" title="1.由来"></a>1.由来</h4><p>类里面封装的是相关的属性和行为，但是有些行为我们是不确定做什么的，这个时候我们就把这个方法用abstract修饰，当方法被这个关键字修饰以后，就不能有方法体了，并且这个类也必须被abstract修饰，这就是抽象类的由来</p>
+<h4 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h4><p>如果一个类中含有抽象方法，这个类就可以被称为抽象类，该类也需要被abstract修饰。它的作用是强制要求子类必须实现某些功能<br>（抽象方法：只有方法声明，没有方法体，被abstract修饰）</p>
+<h4 id="3-格式"><a href="#3-格式" class="headerlink" title="3.格式"></a>3.格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义抽象类的格式</span></div><div class="line">       <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</div><div class="line">             <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">                  System.out.println(<span class="string">"我在跑步"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;     </div><div class="line">	<span class="comment">//使用格式1 </span></div><div class="line">    <span class="comment">//定义个普通类，继承抽象类，必须实现抽象类中的抽象方法</span></div><div class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">             <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</div><div class="line">                   System.out.println(<span class="string">"狗吃骨头"</span>);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">   <span class="comment">//使用格式2</span></div><div class="line">   <span class="comment">//定义一个抽象类继承抽象类，不是必须要实现父类的抽象方法</span></div><div class="line">        <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<h4 id="4-基本特点"><a href="#4-基本特点" class="headerlink" title="4.基本特点"></a>4.基本特点</h4><p>a. 抽象方法和抽象类用关键字abstract表示。<br>b. 有抽象方法的类一定是抽象类(或者接口)。抽象类中不一定有抽象方法。<br>c. 抽象类不能被实例化。<br>d. 如果一个类继承抽象类，那么这个类要么本身也是抽象类。这个类 必须重写父类的所有抽象方法。</p>
+<h4 id="5-成员特点"><a href="#5-成员特点" class="headerlink" title="5.成员特点"></a>5.成员特点</h4><h5 id="5-1-成员变量"><a href="#5-1-成员变量" class="headerlink" title="5.1 成员变量"></a>5.1 成员变量</h5><p>可以有成员变量，也可以有常量</p>
+<h5 id="5-2-构造方法"><a href="#5-2-构造方法" class="headerlink" title="5.2 构造方法"></a>5.2 构造方法</h5><p>抽象类有构造方法，但是不能通过构造方法创建对象，构造方法的作用是让子类访问父类数据之前，对父类数据进行初始化</p>
+<h5 id="5-3成员方法"><a href="#5-3成员方法" class="headerlink" title="5.3成员方法"></a>5.3成员方法</h5><p>可以有抽象方法，也可以有非抽象方法<br>抽象方法是为了要求子类做某些事情<br>非抽象方法是为了提高代码的复用性，被子类继承</p>
+<h5 id="6-使用场景"><a href="#6-使用场景" class="headerlink" title="6.使用场景"></a>6.使用场景</h5><p>  人刚生下来就具备哭的行为特征，但是每个人哭的行为不一样，所以人应该定义为抽象类，这些与生俱来的属性和行为应该定义在类里面</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h4><p>我们可以把接口看成是一种特殊的抽象类。比抽象类更抽象。因为它里面的方法都是抽象的。但是注意，接口不是类，我们只是把他看成类</p>
+<h4 id="2-格式"><a href="#2-格式" class="headerlink" title="2.格式"></a>2.格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义格式</span></div><div class="line">	 <span class="class"><span class="keyword">interface</span> 接口名 </span>&#123;</div><div class="line">	     <span class="comment">//静态常量和抽象方法</span></div><div class="line">	 &#125;		</div><div class="line"><span class="comment">//使用格式	</span></div><div class="line">	<span class="comment">//一个类实现一个接口	</span></div><div class="line">     <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">implements</span> 接口名1，接口名2... </span>&#123;</div><div class="line">           <span class="comment">//覆盖接口中的全部方法</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">	<span class="comment">//一个抽象类实现一个接口，不必重写接口中的抽象方法</span></div><div class="line">      <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 类名 <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> 接口1, 接口2,接口..... </span>&#123;</div><div class="line">           <span class="comment">//方法体不需要全部都覆盖</span></div><div class="line">      &#125;</div><div class="line">	<span class="comment">//一个接口继承一个接口</span></div><div class="line">       <span class="class"><span class="keyword">interface</span> 接口名 <span class="keyword">extends</span> 接口1，接口2.. </span>&#123;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<h4 id="3-基本特点"><a href="#3-基本特点" class="headerlink" title="3.基本特点"></a>3.基本特点</h4><p>a. 接口不能被实例化<br>b. 接口中的方法要么被子类重写，要么子类也是抽象类</p>
+<h4 id="4-成员特点"><a href="#4-成员特点" class="headerlink" title="4.成员特点"></a>4.成员特点</h4><h5 id="4-1-成员变量"><a href="#4-1-成员变量" class="headerlink" title="4.1 成员变量"></a>4.1 成员变量</h5><p>接口中只有常量。因为接口中的成员变量有默认的修饰符：public static final</p>
+<h5 id="4-2构造方法"><a href="#4-2构造方法" class="headerlink" title="4.2构造方法"></a>4.2构造方法</h5><p>接口没有构造方法。因为接口中的成员变量都被final修饰，定义的时候必须做初始化</p>
+<h5 id="4-3成员方法"><a href="#4-3成员方法" class="headerlink" title="4.3成员方法"></a>4.3成员方法</h5><p>接口中的方法都是抽象方法，没有方法体。因为接口中的成员方法有默认修饰符public abstract</p>
+<h4 id="5-思想特点"><a href="#5-思想特点" class="headerlink" title="5.思想特点"></a>5.思想特点</h4><p>a.    接口是对外暴露的规则<br>b.    接口是程序的功能拓展<br>c.    接口的出现降低耦合性<br>d.    接口可以用来多实现</p>
+<h5 id="6-使用场景-1"><a href="#6-使用场景-1" class="headerlink" title="6.使用场景"></a>6.使用场景</h5><p>随着人的年纪的增加，会学习舞蹈，吉他，这些都是后天培养的拓展的功能，所以应该把学习跳舞和学习吉他定义为接口，这些后天学习的拓展功能应该定义在接口里</p>
+<h3 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h3><p><strong>相同点：</strong>都是不断向上抽取而来<br><strong>不同点：</strong><br>a.抽象类需要被继承，而且只能单继承<br>   接口需要被实现，而且可以多实现</p>
+<p>b.抽象类中可以定义抽象方法和非抽象方法，子类继承后，可以直接使用非抽象方法<br>   接口中只能定义抽象方法，必须有子类实现</p>
+<p>c.抽象类的字段默认是friendly<br>   接口的字段默认是public static final<br> <strong>下面是抽象类与接口的具体使用：</strong><br> <img src="https://ooo.0o0.ooo/2017/02/28/58b50da26de47.png" alt="a.png"></p>
+<p><strong>类、抽象类与接口三者之间的继承与实现关系：</strong><br><img src="https://ooo.0o0.ooo/2017/02/28/58b50e3263ee2.png" alt="b.png"></p>
+<blockquote>
+<p><strong>版权声明：</strong>本文为博主原创文章，转载请注明出处<a href="http://hunterblog.cn/">http://hunterblog.cn/</a> 和作者：Hunter，谢谢支持。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/JavaBase/" <i class="fa fa-tag"></i> JavaBase</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/27/EclipseForUse.html" rel="prev" title="Eclipse常用快捷键以及设置">
+                Eclipse常用快捷键以及设置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Hunter" />
+          <p class="site-author-name" itemprop="name">Hunter</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/ || archive">
+            
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/3042274870" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+	<!-- 添加网易云音乐-->
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=36019170&auto=0&height=66"></iframe>
+        
+	
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为面向对象"><span class="nav-number">1.</span> <span class="nav-text">何为面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象的三大思想特征：封装，继承，多态"><span class="nav-number">2.</span> <span class="nav-text">面向对象的三大思想特征：封装，继承，多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-封装"><span class="nav-number">3.</span> <span class="nav-text">1. 封装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-定义："><span class="nav-number">3.1.</span> <span class="nav-text">1.1 定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-private关键字"><span class="nav-number">3.2.</span> <span class="nav-text">1.2 private关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-getter-setter方法的使用"><span class="nav-number">3.3.</span> <span class="nav-text">1.3 getter/setter方法的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-this关键字"><span class="nav-number">3.4.</span> <span class="nav-text">1.4 this关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-构造方法"><span class="nav-number">3.5.</span> <span class="nav-text">1.5 构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-1-特点："><span class="nav-number">3.5.1.</span> <span class="nav-text">1.5.1    特点：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-2-作用："><span class="nav-number">3.5.2.</span> <span class="nav-text">1.5.2 作用：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-3-注意事项"><span class="nav-number">3.5.3.</span> <span class="nav-text">1.5.3 注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-给私有属性赋值的方式"><span class="nav-number">3.6.</span> <span class="nav-text">1.6 给私有属性赋值的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7构造方法和setter方法的区别"><span class="nav-number">3.7.</span> <span class="nav-text">1.7构造方法和setter方法的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-static关键字"><span class="nav-number">3.8.</span> <span class="nav-text">1.8 static关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-1-定义"><span class="nav-number">3.8.1.</span> <span class="nav-text">1.8.1 定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-2特点"><span class="nav-number">3.8.2.</span> <span class="nav-text">1.8.2特点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-3注意事项"><span class="nav-number">3.8.3.</span> <span class="nav-text">1.8.3注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-继承"><span class="nav-number">4.</span> <span class="nav-text">2.继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1由来和定义"><span class="nav-number">4.1.</span> <span class="nav-text">2.1由来和定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2好处和弊端"><span class="nav-number">4.2.</span> <span class="nav-text">2.2好处和弊端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3使用场景"><span class="nav-number">4.3.</span> <span class="nav-text">2.3使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4this和super比较"><span class="nav-number">4.4.</span> <span class="nav-text">2.4this和super比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1概念上的区别"><span class="nav-number">4.4.1.</span> <span class="nav-text">2.4.1概念上的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2super使用场景"><span class="nav-number">4.4.2.</span> <span class="nav-text">2.4.2super使用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-3注意事项"><span class="nav-number">4.4.3.</span> <span class="nav-text">2.4.3注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5重写OverRide和重载OverLoad"><span class="nav-number">4.5.</span> <span class="nav-text">2.5重写OverRide和重载OverLoad</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-1重写OverRide"><span class="nav-number">4.5.1.</span> <span class="nav-text">2.5.1重写OverRide</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-2重载OverLoad"><span class="nav-number">4.5.2.</span> <span class="nav-text">2.5.2重载OverLoad</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-5-3注意事项"><span class="nav-number">4.5.3.</span> <span class="nav-text">2.5.3注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6final关键字"><span class="nav-number">4.6.</span> <span class="nav-text">2.6final关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-1定义"><span class="nav-number">4.6.1.</span> <span class="nav-text">2.6.1定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-2被final修饰的特点"><span class="nav-number">4.6.2.</span> <span class="nav-text">2.6.2被final修饰的特点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-6-3被final修饰的类"><span class="nav-number">4.6.3.</span> <span class="nav-text">2.6.3被final修饰的类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多态"><span class="nav-number">5.</span> <span class="nav-text">3.多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1多态的定义"><span class="nav-number">5.1.</span> <span class="nav-text">3.1多态的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2多态的前提条件"><span class="nav-number">5.2.</span> <span class="nav-text">3.2多态的前提条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3多态的成员特点"><span class="nav-number">5.3.</span> <span class="nav-text">3.3多态的成员特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-1成员变量"><span class="nav-number">5.3.1.</span> <span class="nav-text">3.3.1成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-2成员方法"><span class="nav-number">5.3.2.</span> <span class="nav-text">3.3.2成员方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4多态的好处和弊端"><span class="nav-number">5.4.</span> <span class="nav-text">3.4多态的好处和弊端</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-1弊端"><span class="nav-number">5.4.1.</span> <span class="nav-text">3.4.1弊端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-2好处"><span class="nav-number">5.4.2.</span> <span class="nav-text">3.4.2好处</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number"></span> <span class="nav-text">拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类"><span class="nav-number">1.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-由来"><span class="nav-number">1.1.</span> <span class="nav-text">1.由来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-定义"><span class="nav-number">1.2.</span> <span class="nav-text">2.定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-格式"><span class="nav-number">1.3.</span> <span class="nav-text">3.格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-基本特点"><span class="nav-number">1.4.</span> <span class="nav-text">4.基本特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-成员特点"><span class="nav-number">1.5.</span> <span class="nav-text">5.成员特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-成员变量"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-构造方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 构造方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3成员方法"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3成员方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-使用场景"><span class="nav-number">1.5.4.</span> <span class="nav-text">6.使用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口"><span class="nav-number">2.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-定义"><span class="nav-number">2.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-格式"><span class="nav-number">2.2.</span> <span class="nav-text">2.格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-基本特点"><span class="nav-number">2.3.</span> <span class="nav-text">3.基本特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-成员特点"><span class="nav-number">2.4.</span> <span class="nav-text">4.成员特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-成员变量"><span class="nav-number">2.4.1.</span> <span class="nav-text">4.1 成员变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2构造方法"><span class="nav-number">2.4.2.</span> <span class="nav-text">4.2构造方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3成员方法"><span class="nav-number">2.4.3.</span> <span class="nav-text">4.3成员方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-思想特点"><span class="nav-number">2.5.</span> <span class="nav-text">5.思想特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-使用场景-1"><span class="nav-number">2.5.1.</span> <span class="nav-text">6.使用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类和接口"><span class="nav-number">3.</span> <span class="nav-text">抽象类和接口</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hunter</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  您是本站的第 <span id="busuanzi_value_site_uv"></span> 位访客
+</span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("fW8uSFKVXIXuMYF5IzuNs6V1-gzGzoHsz", "pxY0n6tbX14onoHwHQK1PUzO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
