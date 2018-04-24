@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,WPF,C#,混合编程," />
+  <meta name="keywords" content="WPF,C#," />
 
 
 
@@ -95,34 +95,18 @@
 
 
 
-<meta name="description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
+<meta name="description" content="前言：配置文件这个词对于大家来说那是相当熟悉不过啦！如果你经常在Java中操作配置文件的话，相信你会对Java里的Properties类能够熟练操作啦。前几天我在C#也有操作配置文件需求，但是通过查询一轮下来之后，发现C#里面的配置文件是xml类型的，觉得比较麻烦，于是决定写一个操作纯键值对的配置文件工具类，造个轮子！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="混合编程-C#调用Java代码之简单篇">
-<meta property="og:url" content="http://hunterblog.cn/2018/04/08/混合编程-WPF调用Java代码之简单篇.html">
+<meta property="og:title" content="C#读取"配置文件"的实现">
+<meta property="og:url" content="http://hunterblog.cn/2018/04/25/C#实现配置文件的读取.html">
 <meta property="og:site_name" content="Hunter">
-<meta property="og:description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4tkhffeij20xc0gon5p.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4o93rs0qj20dh03wt8j.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4obsa02nj20sj0co3yw.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4oql62n2j20jx0gzaaa.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4phkj1q1j20f40izmxg.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pj2dfcij20f30it74f.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pjk1psqj20f20iv0sz.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pr33kf7j20r008kmx0.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pt4xnz1j20qz06nq2t.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pxfeql5j20px0fzgm9.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4ql59dj4j20w40h9mye.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qm4p1iej20vs0ix0u5.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qmjhmt4j20ti0bd0su.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qnjgvksj208z0epweh.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpd9ecxj20fr0cv74g.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpnfw1jj20lp0ez749.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qywklcwj20e409bjr9.jpg">
-<meta property="og:updated_time" content="2018-04-07T21:55:12.455Z">
+<meta property="og:description" content="前言：配置文件这个词对于大家来说那是相当熟悉不过啦！如果你经常在Java中操作配置文件的话，相信你会对Java里的Properties类能够熟练操作啦。前几天我在C#也有操作配置文件需求，但是通过查询一轮下来之后，发现C#里面的配置文件是xml类型的，觉得比较麻烦，于是决定写一个操作纯键值对的配置文件工具类，造个轮子！">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fqokgmuv6vj20jg07kdgf.jpg">
+<meta property="og:updated_time" content="2018-04-24T23:51:16.816Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="混合编程-C#调用Java代码之简单篇">
-<meta name="twitter:description" content="前言：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fq4tkhffeij20xc0gon5p.jpg">
+<meta name="twitter:title" content="C#读取"配置文件"的实现">
+<meta name="twitter:description" content="前言：配置文件这个词对于大家来说那是相当熟悉不过啦！如果你经常在Java中操作配置文件的话，相信你会对Java里的Properties类能够熟练操作啦。前几天我在C#也有操作配置文件需求，但是通过查询一轮下来之后，发现C#里面的配置文件是xml类型的，觉得比较麻烦，于是决定写一个操作纯键值对的配置文件工具类，造个轮子！">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/b5556e36gy1fqokgmuv6vj20jg07kdgf.jpg">
 
 
 
@@ -152,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://hunterblog.cn/2018/04/08/混合编程-WPF调用Java代码之简单篇.html"/>
+  <link rel="canonical" href="http://hunterblog.cn/2018/04/25/C#实现配置文件的读取.html"/>
 
 
 
 
 
-  <title>混合编程-C#调用Java代码之简单篇 | Hunter</title>
+  <title>C#读取"配置文件"的实现 | Hunter</title>
   
 
 
@@ -319,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hunterblog.cn/2018/04/08/混合编程-WPF调用Java代码之简单篇.html">
+    <link itemprop="mainEntityOfPage" href="http://hunterblog.cn/2018/04/25/C#实现配置文件的读取.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hunter">
@@ -336,7 +320,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">混合编程-C#调用Java代码之简单篇</h2>
+          <h2 class="post-title" itemprop="name headline">C#读取"配置文件"的实现</h2>
         
 
         <div class="post-meta">
@@ -348,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T00:00:00+08:00">
-                2018-04-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">
+                2018-04-25
               </time>
             
 
@@ -388,7 +372,7 @@
 
           
           
-             <span id="/2018/04/08/混合编程-WPF调用Java代码之简单篇.html" class="leancloud_visitors" data-flag-title="混合编程-C#调用Java代码之简单篇">
+             <span id="/2018/04/25/C#实现配置文件的读取.html" class="leancloud_visitors" data-flag-title="C#读取"配置文件"的实现">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -420,79 +404,54 @@
       
 
       
-        <p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4tkhffeij20xc0gon5p.jpg" alt="混合编程"></p>
+        <p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fqokgmuv6vj20jg07kdgf.jpg" alt=""></p>
 <blockquote>
-<p><strong>前言</strong>：这几天在处理跨语言调用的时候碰了不少坑，为了让更多的开发者更快速高效地解决问题，写个文章记录一下，和大家分享！</p>
+<p><strong>前言</strong>：配置文件这个词对于大家来说那是相当熟悉不过啦！如果你经常在Java中操作配置文件的话，相信你会对Java里的<code>Properties</code>类能够熟练操作啦。<br>前几天我在C#也有操作配置文件需求，但是通过查询一轮下来之后，发现C#里面的配置文件是<code>xml</code>类型的，觉得比较麻烦，于是决定写一个操作纯键值对的配置文件工具类，<br>造个轮子！</p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h3 id="何为混合编程"><a href="#何为混合编程" class="headerlink" title="何为混合编程"></a>何为混合编程</h3><p><code>混合编程</code>指的是使用两种或两种以上的程序设计语言来开发应用程序的过程。 (来自百度百科)</p>
-<p><code>优势</code>：能够结合各种语言之间的优势，来开发一个强劲的系统。比如Java和C++：JAVA简单，开发效率很高，完全面向对象，适合做应用程序，C++复杂，运行效率高，难以反编译，适合做底层。Android应用开发时，用Java写应用层，开发效率高，底层关键算法可考虑使用C++，执行效率高，也不容易被反编译，保密性更好。</p>
-<p><code>缺陷</code>：混合编程带来的缺陷就是人员的调动，需要每个语言都有一个专家级人物，能够对该语言产生的疑难杂症进行快速地判断处理，除了每个语言要有一个专家级人物之外，还有有一个主力，负责统筹各语言之间的交互问题，协调处理语言之间的数据交互等问题。</p>
+<h3 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h3><ul>
+<li><code>读取配置文件</code>：根据相对应的路径查找配置文件</li>
+<li><code>对键值进行增删改查</code>：根据键对配置文件进行操作</li>
+<li><code>写入配置文件</code>：将操作后的配置文件进行更新</li>
+</ul>
 <hr>
-<h3 id="工具介绍-IKVM"><a href="#工具介绍-IKVM" class="headerlink" title="工具介绍 - IKVM"></a>工具介绍 - IKVM</h3><p>这里我们以C#调用Java为例，C#调用Java代码需要用到一个工具，那就是<strong>IKVM</strong>，该工具的作用就是<code>将Jar包转换成DLL文件</code></p>
-<p><strong>IKVM介绍：</strong></p>
+<h3 id="前期普及"><a href="#前期普及" class="headerlink" title="前期普及"></a>前期普及</h3><h4 id="参考Java里的Properties类一些方法实现"><a href="#参考Java里的Properties类一些方法实现" class="headerlink" title="参考Java里的Properties类一些方法实现"></a>参考Java里的Properties类一些方法实现</h4><h4 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h4><ul>
+<li><code>Properties</code>：Properties 类表示了一个持久的属性集。Properties 可保存在流中或从流中加载。属性列表中每个键及其对应值都是一个字符串</li>
+</ul>
+<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><ul>
+<li><code>void load(InputStream inStream)</code>：从输入流中读取属性列表（键和元素对）</li>
+<li><code>String getProperty(String key)</code>：用指定的键在此属性列表中搜索属性</li>
+<li><code>Object setProperty(String key, String value)</code>：调用 Hashtable 的方法 put</li>
+<li><code>void store(Writer writer, String comments)</code>：以适合使用 load(Reader) 方法的格式，将此 Properties 表中的属性列表（键和元素对）写入输出字符</li>
+</ul>
+<hr>
+<h3 id="1、读取配置文件"><a href="#1、读取配置文件" class="headerlink" title="1、读取配置文件"></a>1、读取配置文件</h3><p>  <strong>通过加载配置文件，然后保存到C#的集合中</strong><br>  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// &lt;summary&gt;</span></div><div class="line"><span class="comment">/// 读取文件，并用集合将配置信息保存起来</span></div><div class="line"><span class="comment">/// &lt;/summary&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="path"&gt;文件路径&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="properties"&gt;配置文件信息&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;returns&gt;&lt;/returns&gt;</span></div><div class="line"><span class="keyword">private</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; Read(<span class="built_in">string</span> path, Dictionary properties)</div><div class="line">&#123;</div><div class="line">    <span class="comment">// 注意问题：读写文件时提示文件正由另一进程使用，因此该进程无法访问该文件</span></div><div class="line">    FileStream stream = <span class="keyword">new</span> FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);</div><div class="line">    <span class="comment">// 创建读取流对象,注意编码问题，统一使用UTF-8编码即可</span></div><div class="line">    StreamReader reader = <span class="keyword">new</span> StreamReader(stream, Encoding.UTF8);</div><div class="line">    <span class="comment">// 按行读取文件，并将文件信息写入集合中</span></div><div class="line">    <span class="built_in">string</span> line;</div><div class="line">    <span class="keyword">while</span> ((line = reader.ReadLine()) != null)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (line.Contains(<span class="string">"="</span>))</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">string</span>[] temps = line.Split(<span class="string">'='</span>);</div><div class="line">            properties.Add(temps[<span class="number">0</span>], temps[<span class="number">1</span>]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> properties;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  <strong>注意事项：</strong></p>
 <ul>
-<li><code>在.NET中实现的Java虚拟机</code></li>
-<li><code>Java类库的.NET实现</code></li>
-<li><p><code>支持Java和.NET互操作性的工具</code></p>
-<p><code>官网：</code><a href="https://www.ikvm.net/" target="_blank" rel="external">https://www.ikvm.net/</a></p>
-</li>
+<li><code>1、文件路径的正确性</code>：确保文件路径的正确性，可以使用Console.WriteLine(path);查看路径的输出是否正确</li>
+<li><code>2、文件的使用正确性</code>:如果在根据路径读取文件的时候没有添加<code>FileMode.Open, FileAccess.Read, FileShare.ReadWrite</code>参数的时候，会出现<code>读写文件时提示文件正由另一进程使用，因此该进程无法访问该文件</code><br>的错误</li>
 </ul>
-<hr>
-<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><h4 id="1-判断是否安装IKVM"><a href="#1-判断是否安装IKVM" class="headerlink" title="1.判断是否安装IKVM"></a>1.判断是否安装IKVM</h4><ul>
-<li><strong>测试环境：</strong> 按<code>Win+R</code>，然后输入<code>cmd</code>打开命令行，最后在命令行中输入<code>IKVM</code>，如果显示<code>&#39;ikvm&#39; 不是内部或外部命令，也不是可运行的程序
-或批处理文件。</code>，说明未安装，继续第二步<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4o93rs0qj20dh03wt8j.jpg" alt=""></li>
-<li><strong>下载工具：</strong> 进入官网，找到下载链接，官网的下载链接是<code>IKVM 7</code>的版本，下载链接为：<a href="https://sourceforge.net/projects/ikvm/files/" target="_blank" rel="external">https://sourceforge.net/projects/ikvm/files/</a> ， 打开如下图所示界面，点击<code>红色方框的按钮</code>进行下载，<code>等待几秒</code>就会自动下载了。<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4obsa02nj20sj0co3yw.jpg" alt=""></li>
-<li><strong>配置环境</strong> 下载下来就是<code>配置环境变量</code>了，比如说我解压到了D盘，那么我在添加到<code>系统环境变量的Path下，添加一个路径就是：D:\ikvm-7.2.4630.5\bin</code></li>
-<li><strong>环境验证：</strong> 在<code>命令窗口</code>中输入<code>IKVM</code>，如果出现下图，说明环境配置成功！如果还是出现如<code>步骤一</code>的图示，说明环境配置不成功！<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4oql62n2j20jx0gzaaa.jpg" alt=""></li>
-</ul>
-<hr>
-<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><h4 id="1、创建Java工程"><a href="#1、创建Java工程" class="headerlink" title="1、创建Java工程"></a>1、创建Java工程</h4><p> <strong>注意事项：</strong></p>
+<h3 id="2、对配置文件进行操作"><a href="#2、对配置文件进行操作" class="headerlink" title="2、对配置文件进行操作"></a>2、对配置文件进行操作</h3><p>  通过<code>步骤1</code>我们已经得到配置文件的信息，现在我们来修改配置文件中的value值吧<br>  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// &lt;summary&gt;</span></div><div class="line"><span class="comment">/// 根据字段名称修改字段内容</span></div><div class="line"><span class="comment">/// &lt;/summary&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="properties"&gt;配置文件信息集合&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="fieldName"&gt;要修改的字段名称&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="fieldValue"&gt;修改后的字段值&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;returns&gt;&lt;/returns&gt;</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">SetProperties</span><span class="params">(Dictionary properties, <span class="built_in">string</span> fieldName, <span class="built_in">string</span> fieldValue)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// 1.查找配置文件是否存在</span></div><div class="line">    <span class="keyword">if</span> (!properties.ContainsKey(fieldName)) <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="built_in">string</span>.Format(<span class="string">"不存在键 &#123;0&#125; 请检查重试！"</span>, fieldName));</div><div class="line"></div><div class="line">    <span class="comment">// 2.修改文件内容</span></div><div class="line">    properties.Remove(fieldName);</div><div class="line">    properties.Add(fieldName, fieldValue);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  <strong>注意事项：</strong></p>
 <ul>
-<li>该工程的JRE运行环境是<code>1.7</code>的</li>
-<li>需要被调用的方法(即<code>getString()</code>)不能被<code>private</code>和<code>static</code>修饰</li>
-<li><code>包名不能是默认的包名(即缺省的包名)</code>，否则在C#中将无法通过命名空间找到该类</li>
+<li><code>1、在C#里面如果对集合已存在的键，再次添加相同键的时候会报错，如果要修改相同键不同值得时候，应该先把之前的键删除，再添加</code></li>
 </ul>
-<p><code>工程代码如下：</code><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">package com.test;</div><div class="line"></div><div class="line">public class JarClass &#123;</div><div class="line">	/**</div><div class="line">	 * 创建一个公有非静态的方法</div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public String getString() &#123;</div><div class="line">		return &quot;Hello World!&quot;;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="2、将工程打包成Jar包"><a href="#2、将工程打包成Jar包" class="headerlink" title="2、将工程打包成Jar包"></a>2、将工程打包成Jar包</h4><ul>
-<li>在Java项目中点击：<code>右键</code> -&gt; <code>Export</code> -&gt; <code>Java</code> -&gt; <code>Jar file</code> -&gt; <code>Next</code> ，出现下图所示的画面，<code>图中的3</code>就是选择要导出Jar包的路径，完成之后一路点击<code>Next</code>即可。<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4phkj1q1j20f40izmxg.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pj2dfcij20f30it74f.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pjk1psqj20f20iv0sz.jpg" alt=""></li>
-<li>完成上面这些步骤之后，会得到一个Jar包。这个Jar包就是用来转换成DLL文件的。</li>
-</ul>
-<h4 id="3、将Jar文件转换成DLL文件"><a href="#3、将Jar文件转换成DLL文件" class="headerlink" title="3、将Jar文件转换成DLL文件"></a>3、将Jar文件转换成DLL文件</h4><ul>
-<li>命令行中使用IKVM将JAR包转换成DLL文件，转换命令为：<code>ikvmc -out:要转换的dll文件名称 转换Jar包的路径</code></li>
-<li>例如：<code>ikvmc -out:JarTest.dll C:\Users\pangh\Desktop\JarTest.jar</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pr33kf7j20r008kmx0.jpg" alt=""></li>
-<li>出现下图说明转换成功，此时在JarTest.jar文件同一路径下，会多出一个JarTest.dll的文件，这个就是要在C#中使用到的文件啦！<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pt4xnz1j20qz06nq2t.jpg" alt=""></li>
-</ul>
-<h4 id="4、新建一个WPF项目"><a href="#4、新建一个WPF项目" class="headerlink" title="4、新建一个WPF项目"></a>4、新建一个WPF项目</h4><p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4pxfeql5j20px0fzgm9.jpg" alt=""></p>
+<h3 id="3、将操作后的配置文件信息写入文件"><a href="#3、将操作后的配置文件信息写入文件" class="headerlink" title="3、将操作后的配置文件信息写入文件"></a>3、将操作后的配置文件信息写入文件</h3><p>通过<code>步骤2</code>我们已经对配置文件进行操作，此时对操作后的信息再次写入文件中<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// &lt;summary&gt;</span></div><div class="line"><span class="comment">/// 写入文件</span></div><div class="line"><span class="comment">/// &lt;/summary&gt;</span></div><div class="line"><span class="comment">/// &lt;param name="path"&gt;写入文件的路径&lt;/param&gt;</span></div><div class="line"><span class="comment">/// &lt;returns&gt;&lt;/returns&gt;</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">bool</span> <span class="title">Save</span><span class="params">(<span class="built_in">string</span> path)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">bool</span> flag = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">try</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 根据路径创建文件流</span></div><div class="line">        FileStream stream = <span class="keyword">new</span> FileStream(path, FileMode.Create);</div><div class="line">        <span class="comment">// 使用流向文件里面写内容,注意编码问题，统一使用UTF-8编码即可</span></div><div class="line">        StreamWriter writer = <span class="keyword">new</span> StreamWriter(stream, Encoding.UTF8);</div><div class="line">        <span class="comment">// 开始将配置信息逐行写入文件</span></div><div class="line">        foreach (var item in properties)</div><div class="line">        &#123;</div><div class="line">            writer.WriteLine(<span class="built_in">string</span>.Format(<span class="string">"&#123;0&#125;=&#123;1&#125;"</span>, item.Key, item.Value));</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 清空缓冲区</span></div><div class="line">        writer.Flush();</div><div class="line">        <span class="comment">// 关闭流</span></div><div class="line">        stream.Close();</div><div class="line">        <span class="comment">// 此处不能关闭writer流，否则会出现"System.ObjectDisposedException 无法访问已关闭的文件"异常</span></div><div class="line">        <span class="comment">//writer.Close();</span></div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span></div><div class="line">    &#123;</div><div class="line">        flag = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> flag;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>注意事项：</strong></p>
 <ul>
-<li>首先要在WPF中通过<code>NuGet包管理器</code>安装IKVM插件。点击：<code>工具</code> -&gt; <code>NuGet包管理器</code> -&gt; <code>管理解决方案的NuGet 包管理器</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4ql59dj4j20w40h9mye.jpg" alt=""></li>
-<li>进入<code>NuGet包管理器</code>之后，点击：<code>浏览</code> -&gt;<code>输入IKVM</code> -&gt;<code>点击IKVM</code> -&gt;<code>右侧选择当前项目</code> -&gt;<code>选择IKVM的版本为：7.2.4630.5</code> -&gt;<code>安装</code>  <blockquote>
-<p><code>注意：</code>WPF项目里安装的IKVM的版本要和将Jar转DLL的IKVM版本一致，否则会出现IKVM版本冲突的情况</p>
-<p><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qm4p1iej20vs0ix0u5.jpg" alt=""></p>
-</blockquote>
-</li>
-<li>等待一会，安装完成后控制台会输出<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qmjhmt4j20ti0bd0su.jpg" alt=""></li>
-<li>安装完成之后查看WPF项目的引用，会多出一下关于IKVM的DLL文件<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qnjgvksj208z0epweh.jpg" alt=""></li>
+<li><code>1、编码问题</code>：在对文件进行操作的时候，<code>编码</code>是我们应该要重视的问题</li>
+<li><code>2、缓冲区</code>：在对文件进行操作完毕后，应该刷新一下缓冲区</li>
 </ul>
-<h4 id="5、使用DLL文件"><a href="#5、使用DLL文件" class="headerlink" title="5、使用DLL文件"></a>5、使用DLL文件</h4><ul>
-<li>在项目中通过<code>添加引用</code>把我们的DLL文件添加到引用中<br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpd9ecxj20fr0cv74g.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qpnfw1jj20lp0ez749.jpg" alt=""></li>
-<li>添加引用完成之后，在MainWindow.cs 文件中使用该我们的DLL文件，使用方式是通过<code>using Java程序的包名，然后再通过包名找到相应的类，最后在通过类调用相应的方法</code>（<strong>这一步很关键</strong>）</li>
-</ul>
-<p><code>cs文件代码如下:</code></p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> System.Windows;</div><div class="line"><span class="keyword">using</span> com.test; <span class="comment">// 这一步很关键，只有using com.test才能找到Java项目中的JarClass类</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">WpfApp1</span></div><div class="line">&#123;</div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line">    <span class="comment"><span class="doctag">///</span> MainWindow.xaml 的交互逻辑</span></div><div class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainWindow</span> : <span class="title">Window</span></div><div class="line">    &#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainWindow</span>(<span class="params"></span>)</span></div><div class="line">        &#123;</div><div class="line">            InitializeComponent();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Button_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></div><div class="line">        &#123;</div><div class="line">            JarClass test = <span class="keyword">new</span> JarClass();</div><div class="line">            <span class="keyword">string</span> t = test.getString();</div><div class="line">            MessageBox.Show(t);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><code>调用成功的图片</code><br><img src="http://ww1.sinaimg.cn/large/b5556e36gy1fq4qywklcwj20e409bjr9.jpg" alt=""></li>
-</ul>
-<hr>
-<h3 id="关键步骤"><a href="#关键步骤" class="headerlink" title="关键步骤"></a>关键步骤</h3><ul>
-<li>1、导出Jar包</li>
-<li>2、使用IKVM将Jar包转换成DLL文件</li>
-<li>3、在C#中使用DLL文件，调用Java代码</li>
-</ul>
-<hr>
+<h3 id="4、最终测试"><a href="#4、最终测试" class="headerlink" title="4、最终测试"></a>4、最终测试</h3><p>现在整合三个方法，实现一个<code>修改配置文件</code>的工具类，达到类似Java中的<code>Properties</code>类的效果</p>
+<p><code>“配置文件”</code>：</p>
+<p>name=hunter</p>
+<p>hobby=coding</p>
+<p><code>工具类如下</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// &lt;summary&gt;</span></div><div class="line"><span class="comment">/// 读写配置文件工具</span></div><div class="line"><span class="comment">/// &lt;/summary&gt;</span></div><div class="line"><span class="keyword">class</span> FileUtils</div><div class="line">&#123;</div><div class="line">    <span class="comment">/// &lt;summary&gt;</span></div><div class="line">    <span class="comment">/// 保存配置文件信息</span></div><div class="line">    <span class="comment">/// &lt;/summary&gt;</span></div><div class="line">    Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; properties;</div><div class="line">    <span class="comment">/// &lt;summary&gt;</span></div><div class="line">    <span class="comment">/// 文件路径</span></div><div class="line">    <span class="comment">/// &lt;/summary&gt;</span></div><div class="line">    <span class="built_in">string</span> path;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/// &lt;summary&gt;</span></div><div class="line">    <span class="comment">/// 读取文件，并用集合将配置信息保存起来</span></div><div class="line">    <span class="comment">/// &lt;/summary&gt;</span></div><div class="line">    <span class="comment">/// &lt;returns&gt;配置文件信息集合&lt;/returns&gt;</span></div><div class="line">    <span class="keyword">private</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; Read()</div><div class="line">    &#123;</div><div class="line">        path = path.Substring(<span class="number">1</span>);</div><div class="line">        properties = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;();</div><div class="line">        <span class="comment">// 注意问题：读写文件时提示文件正由另一进程使用，因此该进程无法访问该文件</span></div><div class="line">        FileStream stream = <span class="keyword">new</span> FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);</div><div class="line">        <span class="comment">// 创建读取流对象,注意编码问题，统一使用UTF-8编码即可</span></div><div class="line">        StreamReader reader = <span class="keyword">new</span> StreamReader(stream, Encoding.UTF8);</div><div class="line">        <span class="comment">// 按行读取文件，并将文件信息写入集合中</span></div><div class="line">        <span class="built_in">string</span> line;</div><div class="line">        <span class="keyword">while</span> ((line = reader.ReadLine()) != null)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (line.Contains(<span class="string">"="</span>))</div><div class="line">            &#123;</div><div class="line">                <span class="built_in">string</span>[] temps = line.Split(<span class="string">'='</span>);</div><div class="line">                properties.Add(temps[<span class="number">0</span>], temps[<span class="number">1</span>]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> properties;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/// &lt;summary&gt;</span></div><div class="line">    <span class="comment">/// 根据字段名称修改字段内容</span></div><div class="line">    <span class="comment">/// &lt;/summary&gt;</span></div><div class="line">    <span class="comment">/// &lt;param name="path"&gt;要修改文件的路径&lt;/param&gt;</span></div><div class="line">    <span class="comment">/// &lt;param name="fieldName"&gt;要修改的字段名称&lt;/param&gt;</span></div><div class="line">    <span class="comment">/// &lt;param name="fieldValue"&gt;修改后的字段值&lt;/param&gt;</span></div><div class="line">    <span class="comment">/// &lt;returns&gt;&lt;/returns&gt;</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">bool</span> <span class="title">SetProperties</span><span class="params">(<span class="built_in">string</span> path, <span class="built_in">string</span> fieldName, <span class="built_in">string</span> fieldValue)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 0.初始化变量</span></div><div class="line">        <span class="keyword">this</span>.path = path;</div><div class="line"></div><div class="line">        <span class="comment">// 1.读取配置文件</span></div><div class="line">        properties = Read();</div><div class="line">        <span class="comment">// 2.查找配置文件是否存在</span></div><div class="line">        <span class="keyword">if</span> (!properties.ContainsKey(fieldName)) <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="built_in">string</span>.Format(<span class="string">"不存在键 &#123;0&#125; 请检查重试！"</span>, fieldName));</div><div class="line"></div><div class="line">        <span class="comment">// 3.修改文件内容</span></div><div class="line">        properties.Remove(fieldName);</div><div class="line">        properties.Add(fieldName, fieldValue);</div><div class="line"></div><div class="line">        <span class="comment">// 4.写入文件</span></div><div class="line">        <span class="keyword">bool</span> isSave = Save();</div><div class="line">        <span class="keyword">return</span> isSave;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/// &lt;summary&gt;</span></div><div class="line">    <span class="comment">/// 将配置文件写入文件</span></div><div class="line">    <span class="comment">/// &lt;/summary&gt;</span></div><div class="line">    <span class="comment">/// &lt;returns&gt;是否写入成功&lt;/returns&gt;</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">bool</span> <span class="title">Save</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">try</span></div><div class="line">        &#123;</div><div class="line">            <span class="comment">// 根据路径创建文件流</span></div><div class="line">            FileStream stream = <span class="keyword">new</span> FileStream(path, FileMode.Create);</div><div class="line">            <span class="comment">// 使用流向文件里面写内容,注意编码问题，统一使用UTF-8编码即可</span></div><div class="line">            StreamWriter writer = <span class="keyword">new</span> StreamWriter(stream, Encoding.UTF8);</div><div class="line">            <span class="comment">// 开始将配置信息逐行写入文件</span></div><div class="line">            foreach (var item in properties)</div><div class="line">            &#123;</div><div class="line">                writer.WriteLine(<span class="built_in">string</span>.Format(<span class="string">"&#123;0&#125;=&#123;1&#125;"</span>, item.Key, item.Value));</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// 清空缓冲区</span></div><div class="line">            writer.Flush();</div><div class="line">            <span class="comment">// 关闭流</span></div><div class="line">            stream.Close();</div><div class="line">            <span class="comment">// 此处不能关闭writer流，否则会出现"System.ObjectDisposedException 无法访问已关闭的文件"异常</span></div><div class="line">            <span class="comment">//writer.Close();</span></div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">catch</span></div><div class="line">        &#123;</div><div class="line">            flag = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>调用结果</code>：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ChangeProperties</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    PropertiesUtils utils = <span class="keyword">new</span> PropertiesUtils();</div><div class="line">    <span class="keyword">bool</span> flag = utils.SetProperties(@<span class="string">"‪d:\test.txt"</span>, <span class="string">"name"</span>, <span class="string">"Hunter"</span>);</div><div class="line">    Console.WriteLine(<span class="string">"是否修改："</span> + flag);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此时查看配置文件的<code>name</code>属性时，已经由原来的<code>hunter</code>变成<code>Hunter</code>了，说明我们已经成功修改配置文件</p>
 <h3 id="本文小结"><a href="#本文小结" class="headerlink" title="本文小结"></a>本文小结</h3><blockquote>
-<p>通过初次接触混合编程的过程，也踩了不少坑，混合编程给我们带来了多种语言的优势，我们在整合多种语言的时候也需要注意<code>版本问题</code>，如果把混合编程利用的好的话，能够给我们带来很多的便利。下一篇文章将给大家带来<code>C#如何调用Java代码(复杂篇)</code>。 希望能够帮助到更多的developer.</p>
+<p>本文虽然是一个小小的造轮子，但是在造轮子的过程中学习到了很多想不到的收获，能够快速帮助我们成长起来，计算机是门应用学，我们应该多去实践操作！<br>这篇文章只是提供了如何根据<code>属性名</code>修改相对应的<code>属性值</code>，当然你还有兴趣的话，完全可以增加对配置文件的<code>增</code>、<code>删</code>功能，<br>此外，对于此次造轮子情况得出一个结论，<code>凡是设计操作IO流的情况我们都应该要注意编码问题</code>。</p>
 </blockquote>
 <hr>
 <blockquote>
@@ -515,13 +474,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" <i class="fa fa-tag"></i> Java</a>
-          
             <a href="/tags/WPF/" <i class="fa fa-tag"></i> WPF</a>
           
             <a href="/tags/C/" <i class="fa fa-tag"></i> C#</a>
-          
-            <a href="/tags/混合编程/" <i class="fa fa-tag"></i> 混合编程</a>
           
         </div>
       
@@ -534,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/算法小结-全排列生成算法之字典序法.html" rel="next" title="算法小结-全排列生成算法之字典序法">
-                <i class="fa fa-chevron-left"></i> 算法小结-全排列生成算法之字典序法
+              <a href="/2018/04/08/混合编程-WPF调用Java代码之简单篇.html" rel="next" title="混合编程-C#调用Java代码之简单篇">
+                <i class="fa fa-chevron-left"></i> 混合编程-C#调用Java代码之简单篇
               </a>
             
           </div>
@@ -543,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/25/C#实现配置文件的读取.html" rel="prev" title="C#读取"配置文件"的实现">
-                C#读取"配置文件"的实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -724,7 +675,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为混合编程"><span class="nav-number">1.</span> <span class="nav-text">何为混合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具介绍-IKVM"><span class="nav-number">2.</span> <span class="nav-text">工具介绍 - IKVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">3.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断是否安装IKVM"><span class="nav-number">3.1.</span> <span class="nav-text">1.判断是否安装IKVM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现过程"><span class="nav-number">4.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建Java工程"><span class="nav-number">4.1.</span> <span class="nav-text">1、创建Java工程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、将工程打包成Jar包"><span class="nav-number">4.2.</span> <span class="nav-text">2、将工程打包成Jar包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、将Jar文件转换成DLL文件"><span class="nav-number">4.3.</span> <span class="nav-text">3、将Jar文件转换成DLL文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、新建一个WPF项目"><span class="nav-number">4.4.</span> <span class="nav-text">4、新建一个WPF项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、使用DLL文件"><span class="nav-number">4.5.</span> <span class="nav-text">5、使用DLL文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键步骤"><span class="nav-number">5.</span> <span class="nav-text">关键步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文小结"><span class="nav-number">6.</span> <span class="nav-text">本文小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#大致思路"><span class="nav-number">1.</span> <span class="nav-text">大致思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前期普及"><span class="nav-number">2.</span> <span class="nav-text">前期普及</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考Java里的Properties类一些方法实现"><span class="nav-number">2.1.</span> <span class="nav-text">参考Java里的Properties类一些方法实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义："><span class="nav-number">2.2.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法："><span class="nav-number">2.3.</span> <span class="nav-text">方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、读取配置文件"><span class="nav-number">3.</span> <span class="nav-text">1、读取配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、对配置文件进行操作"><span class="nav-number">4.</span> <span class="nav-text">2、对配置文件进行操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、将操作后的配置文件信息写入文件"><span class="nav-number">5.</span> <span class="nav-text">3、将操作后的配置文件信息写入文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、最终测试"><span class="nav-number">6.</span> <span class="nav-text">4、最终测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文小结"><span class="nav-number">7.</span> <span class="nav-text">本文小结</span></a></li></ol></div>
             
 
           </div>
