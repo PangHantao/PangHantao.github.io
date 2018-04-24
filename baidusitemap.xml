@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://hunterblog.cn/2018/04/25/C#%E5%AE%9E%E7%8E%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%8F%96.html</loc>
-    <lastmod>2018-04-24T23:51:16.816Z</lastmod>
+    <lastmod>2018-04-24T23:54:08.764Z</lastmod>
     <data>
         <display>
-        <title>C#读取"配置文件"的实现</title>
+        <title>C#实现配置文件的读取</title>
         <pubTime>2018-04-24T16:00:00.000Z</pubTime>
         
         <tag>WPF</tag>
