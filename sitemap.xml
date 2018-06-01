@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hunterblog.cn/categories/index.html</loc>
+    
+    <lastmod>2018-06-01T16:40:03.994Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hunterblog.cn/archives/index.html</loc>
     
     <lastmod>2018-06-01T16:39:44.830Z</lastmod>
@@ -138,13 +145,6 @@
     <loc>http://hunterblog.cn/tags/index.html</loc>
     
     <lastmod>2017-09-10T02:07:31.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hunterblog.cn/categories/index.html</loc>
-    
-    <lastmod>2017-09-09T15:04:24.040Z</lastmod>
     
   </url>
   
